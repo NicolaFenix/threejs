@@ -6,6 +6,8 @@ var mesh, zmesh, geometry;
 
 var meshes = [];
 
+
+
 init();
 animate();
 
@@ -19,8 +21,12 @@ function init() {
 ///* Values (Field of view - 45 looks natural, Camera ratio, how closer, how far tha object can be ) */
     camera = new THREE.PerspectiveCamera( 75, width/height, 0.1, 10000 );
 
-    renderer = new THREE.WebGLRenderer({ antialias: false });
+    renderer = new THREE.WebGLRenderer({
+         antialias: true
+        ,preserveDrawingBuffer:true
+    });
     renderer.setSize( width, height );
+    renderer._microCache = new MicroCache();
     document.body.appendChild( renderer.domElement );
 
 
@@ -28,14 +34,13 @@ function init() {
 
     /* Cube */
     var geometry = new THREE.BoxGeometry( 3, 3, 3 );
-    var material = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('models/texture.jpg') }); //Lambert material allows shading on the sides
+    var texture = renderer._microCache.getSet('heavy', THREE.ImageUtils.loadTexture('models/texture-light.jpg'));
+    var material = new THREE.MeshBasicMaterial({ color: 0xff0000 }); //Lambert material allows shading on the sides
     cube = new THREE.Mesh( geometry, material );
+    THREE.GeometryUtils.merge(geometry, cube);
     scene.add( cube );
 
-    /* Object */
-    //var loader = new THREE.JSONLoader(),
-    //    callbackKey = function(geometry) {createScene(geometry,  0, 0, 0, 1, "models/texture.jpg")};
-    //loader.load("models/pannello.js", callbackKey);
+
 
 
     /* Sky */
@@ -60,29 +65,40 @@ function init() {
     camera.position.z = 5;
     camera.position.y = 2;
     camera.position.x = 2;
-    //camera.lookAt(cube.position);
+    camera.lookAt(cube.position);
 
 
 
     /* Controls */
 
-    controls = new THREE.TrackballControls( camera );
+
+    controls = new THREE.OrbitControls( camera );
+    controls.addEventListener( 'change', render );
+    controls.noZoom = false;
+    controls.noPan = false;
+    controls.staticMoving = false;
 
     controls.rotateSpeed = 2.0;
     controls.zoomSpeed = 1.2;
     controls.panSpeed = 0.8;
 
-
-
-    controls.noZoom = false;
-    controls.noPan = false;
-
-    controls.staticMoving = false;
-    controls.dynamicDampingFactor = 0.3;
-
-    controls.keys = [ 65, 83, 68 ];
-
-    controls.addEventListener( 'change', render );
+    //controls = new THREE.TrackballControls( cube );
+    //
+    //controls.rotateSpeed = 2.0;
+    //controls.zoomSpeed = 1.2;
+    //controls.panSpeed = 0.8;
+    //
+    //
+    //
+    //controls.noZoom = false;
+    //controls.noPan = false;
+    //
+    //controls.staticMoving = false;
+    //controls.dynamicDampingFactor = 0.3;
+    //
+    //controls.keys = [ 65, 83, 68 ];
+    //
+    //controls.addEventListener( 'change', render );
 
     window.addEventListener( 'resize', onWindowResize, false );
 
@@ -90,13 +106,7 @@ function init() {
 }
 
 
-function createScene(geometry, x, y, z, scale, tmap) {
-    zmesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({map: THREE.ImageUtils.loadTexture(tmap)}));
-    zmesh.position.set(x, y, z);
-    zmesh.scale.set(scale, scale, scale);
-    meshes.push(zmesh);
-    scene.add(zmesh);
-}
+/* Object */
 
 
 
