@@ -56,17 +56,21 @@
     var lastTimestamp = 0;
     var progress = 0;
 
-    loader.load( 'models/camera_prova.dae', function ( collada ) {
+    loader.load( 'models/anim3.dae', function ( collada ) {
 
         model = collada.scene;
         animations = collada.animations;
+        console.log(animations);
         kfAnimationsLength = animations.length;
 
-        model.scale.x = model.scale.y = model.scale.z = 1; // 1/8 scale, modeled in cm
+        model.scale.x = model.scale.y = model.scale.z = 0.2; // 1/8 scale, modeled in cm
 
         init();
         start();
         animate( lastTimestamp );
+
+        document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
+        document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
 
     }   );
 
@@ -76,17 +80,19 @@
         document.body.appendChild( container );
 
         // Camera
-        model.getObjectByName( 'camera1', true ).visible = true;
+        //model.getObjectByName( 'camera1', true ).visible = true;
         console.log();
 
 
         camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.01, 1000 );
-        camera.position.set(model.getObjectByName( 'camera1', true ).position.x, model.getObjectByName( 'camera1', true ).position.y,model.getObjectByName( 'camera1', true ).position.z);
-        camera.lookAt( new THREE.Vector3( -1.224774125, 2.18410625, 4.57969125 ) );
+        camera.position.set(100, 100,100);
+
 
         // Scene
 
         scene = new THREE.Scene();
+
+        camera.lookAt(scene.position);
 
         // KeyFrame Animations
 
@@ -172,6 +178,8 @@
                 var sids = animation.data.hierarchy[ h ].sids;
                 var obj = animation.hierarchy[ h ];
 
+                console.log(animation.data);
+
                 if ( keys.length && sids ) {
 
                     for ( var s = 0; s < sids.length; s++ ) {
@@ -191,7 +199,7 @@
 
             }
 
-            animation.loop = false;
+            animation.loop = true;
             animation.play();
 
         }
@@ -201,35 +209,79 @@
     function animate( timestamp ) {
 
         var frameTime = ( timestamp - lastTimestamp ) * 0.001;
+//
+//        if ( progress >= 0 && progress < kfAnimationsLength ) {
+//
+//            for ( var i = 0; i < kfAnimationsLength; ++i ) {
+//
+//                kfAnimations[ i ].update( frameTime );
+//
+//            }
+//
+//        } else if ( progress >= kfAnimationsLength ) {
+//
+//            for ( var i = 0; i < kfAnimationsLength; ++i ) {
+//
+//                kfAnimations[ i ].stop();
+//
+//            }
+//
+//            progress = 0;
+//            start();
+//
+//        }
 
-        if ( progress >= 0 && progress < 2 ) {
+        for ( var i = 0; i < kfAnimationsLength; ++i ) {
 
-            for ( var i = 0; i < kfAnimationsLength; ++i ) {
-
-                kfAnimations[ i ].update( frameTime );
+                //kfAnimations[ i ].update( animations[0].length - 0.01 );
+                kfAnimations[ i ].update( timestamp );
 
             }
 
-        } else if ( progress >= 2 ) {
-
-            for ( var i = 0; i < kfAnimationsLength; ++i ) {
-
-                kfAnimations[ i ].stop();
-
-            }
-
-            progress = 0;
-            start();
-
-        }
+        console.log(animations)
+        //console.log(kfAnimations[ 0])
 
         pointLight.position.copy( camera.position );
 
-        progress += frameTime;
+        //progress += frameTime;
         lastTimestamp = timestamp;
         renderer.render( scene, camera );
         stats.update();
-        requestAnimationFrame( animate );
+        //requestAnimationFrame( animate );
+
+    }
+
+    /* Dani */
+
+
+    var wheelDistance = function(evt){
+        if (!evt) evt = event;
+        var w=evt.wheelDelta, d=evt.detail;
+        if (d){
+            if (w) return w/d/40*d>0?1:-1; // Opera
+            else return -d/3;              // Firefox;         TODO: do not /3 for OS X
+        } else return w/120;             // IE/Safari/Chrome TODO: /3 for Chrome OS X
+    };
+
+    var wheelDirection = function(evt){
+        if (!evt) evt = event;
+        return (evt.detail<0) ? 1 : (evt.wheelDelta>0) ? 1 : -1;
+    };
+
+    var counter = 0;
+
+    function handleScroll(evt) {
+
+        if(wheelDirection(evt) > 0 ){
+
+            counter = counter + wheelDistance(evt);
+        } else {
+            counter = counter - Math.abs(wheelDistance(evt));
+
+        }
+
+        animate(  wheelDirection(evt) * 0.1 )
+        //animate( counter )
 
     }
 

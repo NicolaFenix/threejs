@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/three.min.js"></script>
+    <script src="js/dat.gui.min.js"></script>
+    <script src="js/stats.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+
+    <!-- Effect Composer - Passes -->
+
+    <script src="js/EffectComposer.js"></script>
+    <script src ="js/RenderPass.js" > </script>
+    <script src = "js/CopyShader.js" > </script>
+    <script src ="js/ShaderPass.js" > </script>
+    <script src = "js/MaskPass.js" > </script>
+
+</head>
+<body>
+
+
+<div id="container"></div>
+
+<script>
+
+
+    var renderer, scena, camera, control, stats, controlliCamera, sfondoScena, cameraSfondo, composer;
+
+    function init() {
+        // Inizialization
+        scena = new THREE.Scene();
+
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setClearColor(0x000000, 1.0);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMapEnabled = true;
+
+
+
+        cameraSfondo = new THREE.OrthographicCamera(
+                -window.innerWidth // LEFT This property defines the border for the leftmost position to be rendered.
+                , window.innerWidth // RIGHT This property defines the border for the rightmost position to be rendered.
+                , window.innerHeight // TOP This property defines the border for the topmost position to be rendered.
+                , -window.innerHeight // BOTTOM This property defines the border for the bottommost position to be rendered.
+                , -10000, 10000 //This property defines the point, based on the position of the camera, from where the scene will be rendered. , This property defines the point, based on position of the camera, to whic the scene will be rendered
+        );
+        cameraSfondo.position.z = 50;
+
+        sfondoScena = new THREE.Scene();
+        var materialColor = new THREE.MeshBasicMaterial({map: THREE.ImageUtils.loadTexture('images/starry_background.jpg'), depthTest: false }); /// DEPTH TEST FALSE SUPER IMPORTANT TO COMPOSING!!!
+
+        var sfondoBG = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), materialColor);
+        sfondoBG.position.z = -100;
+        sfondoBG.scale.set(window.innerWidth * 2, window.innerHeight * 2, 1); // LOOK AT THE SCALE!!!!!
+        sfondoScena.add(sfondoBG);
+
+
+
+
+
+
+
+        // Create cloud material
+        var nuvoleTexture = THREE.ImageUtils.loadTexture('images/fair_clouds_4k.png');
+        var nuvoleMateriale = new THREE.MeshPhongMaterial();
+
+        nuvoleMateriale.map = nuvoleTexture;
+        nuvoleMateriale.transparent = true;
+
+
+        //Terra
+        var sferaGeometria = new THREE.SphereGeometry(15, 30, 30); // Radius, number of width segment, number of height segment Only radius is required
+        // Create earth material
+        var terraTexture = THREE.ImageUtils.loadTexture('images/earthmap4k.jpg');
+        var terraNormal = THREE.ImageUtils.loadTexture('images/earth_normalmap_flat4k.jpg');
+        var terraSpec = THREE.ImageUtils.loadTexture('images/earthspec4k.jpg');
+        var terraMateriale = new THREE.MeshPhongMaterial(); // Reacts to lights
+
+        terraMateriale.map = terraTexture;
+        terraMateriale.normalMap = terraNormal;
+        terraMateriale.normalScale = new THREE.Vector2(0.5,0.7); // Scale of the bump effect
+        terraMateriale.specularMap = terraSpec;
+        terraMateriale.specular = new THREE.Color(0x00283a); // Color of the specular
+
+        var terraMesh = new THREE.Mesh(sferaGeometria, terraMateriale);
+        terraMesh.name = 'terra';
+
+        scena.add(terraMesh);
+
+        // Nuvole
+        var nuvoleGeometria = new THREE.SphereGeometry(sferaGeometria.parameters.radius * 2.01, sferaGeometria.parameters.widthSegments, sferaGeometria.parameters.heightSegments);
+        var nuvoleMesh = new THREE.Mesh(nuvoleGeometria, nuvoleMateriale);
+
+        scena.add(nuvoleMesh);
+
+        var luceDirezionale = new THREE.DirectionalLight(0xffffff, 1); // Color, intensity
+        luceDirezionale.position = new THREE.Vector3(100, 10, -50);
+        luceDirezionale.name = "direzionale";
+
+        scena.add(luceDirezionale);
+
+
+        var luceAmbientale = new THREE.AmbientLight(0x111111); // Only light color
+
+        scena.add(luceAmbientale);
+
+        controlliCamera = new THREE.OrbitControls(camera);
+        camera.position.x = 35;
+        camera.position.y = 36;
+        camera.position.z = 33;
+        camera.lookAt(scena.position);
+
+
+//        control = new function () {
+//            this.rotationSpeed = 0.005;
+//            this.opacity = 0.6;
+//            this.color = cuboMateriale.color.getHex();
+//        };
+//
+//        addControlGui(control);
+        addStatsObject();
+
+        // setup the composer steps
+        // first render the background
+        var bgPass = new THREE.RenderPass(sfondoScena, cameraSfondo);
+        // next render the scene (rotating earth), without clearing the current output
+        var renderPass = new THREE.RenderPass(scena, camera);
+        renderPass.clear = false;
+        // finally copy the result to the screen
+        var effectCopy = new THREE.ShaderPass(THREE.CopyShader);
+        effectCopy.renderToScreen = true;
+
+        // add these passes to the composer
+        composer = new THREE.EffectComposer(renderer);
+        composer.addPass(bgPass);
+        composer.addPass(renderPass);
+        composer.addPass(effectCopy);
+
+
+        var container = document.getElementById('container');
+        container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
+
+
+        render();
+
+    }
+
+    function addStatsObject() {
+        stats = new Stats();
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.lef = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+
+    }
+
+
+    function addControlGui(controlObject) {
+        var gui = new dat.GUI();
+        gui.add(controlObject, 'rotationSpeed', -0.01, 0.01);
+        gui.add(controlObject, 'opacity', 0.1, 1);
+        gui.addColor(controlObject, 'color');
+    }
+
+
+    function render() {
+
+        //console.log(camera);
+        // scena.getObjectByName('cubo').material.opacity = control.opacity;
+
+//        var rotSpeed = control.rotationSpeed;
+//        camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
+//        camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
+//        camera.lookAt(scena.position);
+//
+//        scena.getObjectByName('cubo').material.color = new THREE.Color(control.color);
+
+       controlliCamera.update();
+        stats.update();
+
+        //renderer.render(scena, camera);
+        renderer.autoClear = false;
+        composer.render();
+        requestAnimationFrame(render);
+
+
+    }
+    window.onload = init;
+
+
+</script>
+
+</body>
+</html>

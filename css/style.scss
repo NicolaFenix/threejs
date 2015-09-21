@@ -5,6 +5,12 @@ body, html, #container{
   width: 100%;
 }
 
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+
 
 canvas {
   position: fixed;
