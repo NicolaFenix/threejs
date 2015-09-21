@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/three.min.js"></script>
+    <script src="js/dat.gui.min.js"></script>
+    <script src="js/stats.min.js"></script>
+</head>
+<body>
+
+
+<div id="container"></div>
+
+<script>
+
+
+    var renderer, scena, camera, control,stats;
+
+    function init() {
+        // Inizialization
+        scena = new THREE.Scene();
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setClearColor(0x000000);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMapEnabled = true;
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.x = 14;
+        camera.position.y = 16;
+        camera.position.z = 12;
+        camera.lookAt(scena.position);
+
+
+        var cuboGeometria = new THREE.CubeGeometry(6, 4, 10);
+        var cuboMateriale = new THREE.MeshLambertMaterial({
+            color: 'red'
+            , transparent: true
+        });
+        cubo = new THREE.Mesh(cuboGeometria, cuboMateriale);
+        cubo.name = 'cubo'; ///FUUUUCK Thre.js Essential!!!!
+        cubo.castShadow = true;
+
+        scena.add(cubo);
+
+
+        var pianoGeometria = new THREE.PlaneGeometry(20, 20, 20);
+        var pianoMateriale = new THREE.MeshLambertMaterial({
+            color: 0xcccccc
+
+        });
+        var piano = new THREE.Mesh(pianoGeometria, pianoMateriale);
+        piano.receiveShadow = true; //Shadow, both casted and received, have to be enabled
+        piano.rotation.x = -0.5 * Math.PI; //90 degrees in radians
+        piano.position.set(0, -2, 0);
+
+
+        scena.add(piano);
+
+
+        var luce = new THREE.SpotLight(0xffffff);
+        luce.position.set(10, 20, 20);
+        luce.castShadow = true;
+        luce.shadowCameraNear = 20; // Not mentioned in tutorial!!!!
+        luce.shadowCameraFar = 50; // Not mentioned in tutorial!!!!
+        scena.add(luce);
+
+
+        control = new function () {
+            this.rotationSpeed = 0.005;
+            this.opacity = 0.6;
+            this.color = cuboMateriale.color.getHex();
+        };
+
+        addControlGui(control);
+        addStatsObject();
+
+        var container = document.getElementById('container');
+        container.appendChild(renderer.domElement); //domElement is a property of WEBGLRender
+
+
+        render();
+
+        console.log(cubo);
+    }
+
+    function addStatsObject(){
+        stats = new Stats();
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.lef = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+
+    }
+
+
+
+
+
+    function addControlGui(controlObject) {
+        var gui = new dat.GUI();
+        gui.add(controlObject, 'rotationSpeed', -0.01, 0.01);
+        gui.add(controlObject, 'opacity', 0.1, 1);
+        gui.addColor(controlObject, 'color');
+    }
+
+
+    function render() {
+
+        scena.getObjectByName('cubo').material.opacity = control.opacity;
+
+        var rotSpeed = control.rotationSpeed;
+        camera.position.x = camera.position.x * Math.cos(rotSpeed) + camera.position.z * Math.sin(rotSpeed);
+        camera.position.z = camera.position.z * Math.cos(rotSpeed) - camera.position.x * Math.sin(rotSpeed);
+        camera.lookAt(scena.position);
+
+        scena.getObjectByName('cubo').material.color = new THREE.Color(control.color);
+
+
+        stats.update();
+
+        renderer.render(scena, camera);
+        requestAnimationFrame(render);
+
+
+    }
+    window.onload = init;
+
+
+</script>
+
+</body>
+</html>

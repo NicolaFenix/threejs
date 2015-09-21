@@ -21,7 +21,6 @@ function init() {
     renderer.setSize( window.innerWidth, window.innerHeight );
 
     var container = document.getElementById( 'container' );
-    console.log(container);
     container.appendChild( renderer.domElement );
 
     camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );

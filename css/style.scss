@@ -1,9 +1,10 @@
 /* Three JS - Main Style */
 
-body{
+body, html, #container{
   height: 100%;
   width: 100%;
 }
+
 
 canvas {
   position: fixed;
