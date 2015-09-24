@@ -31,13 +31,16 @@
 </head>
 <body>
 
+<div id="test" style="display: block; width: 500px; height: 500px; background-color: red"></div>
+
 
 <script src="js/three.min.js"></script>
-
 <script src="js/ColladaLoader.js"></script>
-
 <script src="js/Detector.js"></script>
 <script src="js/stats.min.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/inertiaScroll.js"></script>
+
 
 <script>
 
@@ -67,10 +70,10 @@
 
         init();
         start();
-        animate( lastTimestamp );
+        update( lastTimestamp );
 
-        document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
-        document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
+        //document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
+        //document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
 
     }   );
 
@@ -78,6 +81,11 @@
 
         var container = document.createElement( 'div' );
         document.body.appendChild( container );
+        container.id = 'wheel';
+
+
+
+
 
         // Camera
         model.getObjectByName( 'Camera', true ).visible = true;
@@ -178,7 +186,7 @@
                 var sids = animation.data.hierarchy[ h ].sids;
                 var obj = animation.hierarchy[ h ];
 
-                console.log(animation.data);
+                //console.log(animation.data);
 
                 if ( keys.length && sids ) {
 
@@ -206,9 +214,9 @@
 
     }
 
-    function animate( timestamp ) {
+    function update( e ) {
 
-        var frameTime = ( timestamp - lastTimestamp ) * 0.001;
+        //var frameTime = ( timestamp - lastTimestamp ) * 0.001;
 //
 //        if ( progress >= 0 && progress < kfAnimationsLength ) {
 //
@@ -231,21 +239,39 @@
 //
 //        }
 
+        var VIDEO_INIT = 0,
+                VIDEO_END = 2.4;
+
+        var cooD = e;
+
+        if (kfAnimations[0].currentTime > VIDEO_END){
+            cooD = (VIDEO_END - kfAnimations[0].currentTime) * -1 ;
+        }
+
+        if ( kfAnimations[0].currentTime < VIDEO_INIT){
+            cooD =  (VIDEO_INIT - kfAnimations[0].currentTime) * -1 ;
+        }
+
+        console.log(e + ' - ' + cooD  +' - ' +  kfAnimations[0].currentTime)
+        //console.log( kfAnimations[0].currentTime)
+
+//        console.log(cooD)
+
         for ( var i = 0; i < kfAnimationsLength; ++i ) {
 
                 //kfAnimations[ i ].update( animations[0].length - 0.01 );
-                kfAnimations[ i ].update( timestamp );
+                kfAnimations[ i ].update( cooD );
 
 
             }
 
-        console.log( kfAnimations[2]);
+        //console.log( kfAnimations[2]);
         camera.position.copy( model.getObjectByName('Camera',true).position );
 
         pointLight.position.copy( camera.position );
 
         //progress += frameTime;
-        lastTimestamp = timestamp;
+//        lastTimestamp = timestamp;
         renderer.render( scene, camera );
         stats.update();
         //requestAnimationFrame( animate );
@@ -281,10 +307,37 @@
 
         }
 
-        animate(  wheelDirection(evt) * -0.1 )
+        update(  wheelDirection(evt) * -0.25 )
         //animate( counter )
 
     }
+
+    console.log($('#test'))
+
+    $('#test').momentus({
+        u: 10,
+        mass: 1000,
+        wheelRatio: -1000,
+        mouseRatio: 6,
+        onChange: function(coords){
+
+            var progress = (coords.y - lastTimestamp);
+            //console.log(coords.y)
+            //console.log('progress '+ progress);
+            //console.log('lastTimestamp '+ lastTimestamp);
+
+            update(progress.toFixed(2) * 0.01);
+
+            lastTimestamp = coords.y;
+
+//            $('.wheel > div').each(function(i){
+//                //var angle = -(coords.y/2) + (360/10)*i;
+//                //$(this).css('transform', 'perspective(500px) rotate3d(1,0,0,'+angle+'deg) translate3d(0,0,122px)');
+//            });
+        }
+    });
+
+
 
 </script>
 </body>
