@@ -60,7 +60,7 @@
     var lastTimestamp = 0;
     var progress = 0;
 
-    loader.load( 'models/cubo4.dae', function ( collada ) {
+    loader.load( 'models/basilica_03.dae', function ( collada ) {
 
         model = collada.scene;
         animations = collada.animations;
@@ -73,14 +73,19 @@
         start();
         update( lastTimestamp );
 
-        callback();
+        callback(model);
 
         //document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
         //document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
 
     }   );
 
-    function callback(){
+    function callback(model){
+
+
+        console.log(model);
+
+
 //        model.traverse(function(child) {
 //
 //            if (child instanceof THREE.PerspectiveCamera) {
@@ -163,8 +168,21 @@
 
         // Lights
 
-        pointLight = new THREE.PointLight( 0xffffff, 1.75 );
+        pointLight = new THREE.PointLight( 0xffffff, 5 );
         scene.add( pointLight );
+
+        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
+        var pianoMateriale = new THREE.MeshLambertMaterial({
+            color: 0xff0000
+
+        });
+        var piano = new THREE.Mesh(pianoGeometria, pianoMateriale);
+        piano.receiveShadow = true; //Shadow, both casted and received, have to be enabled
+        piano.rotation.x = -0.5 * Math.PI; //90 degrees in radians
+        piano.position.set(0, -2, 0);
+
+
+        scene.add(piano);
 
         // Renderer
 
@@ -272,7 +290,7 @@
             if (child instanceof THREE.PerspectiveCamera) {
 
                 camera = child;
-                camera.near = 10;
+                //camera.near = 0;
 //                camera.fov = 30;
 //                camera.castShadow = true;
                 var vector = new THREE.Vector3();
@@ -286,6 +304,7 @@
 
         camera.aspect = window.innerWidth / window.innerHeight;
 
+        camera.near = 10;
         camera.updateProjectionMatrix();
 
 //        if (kfAnimations[0].currentTime > VIDEO_END){
@@ -310,7 +329,7 @@
             }
 
         //console.log( kfAnimations[2]);
-        camera.position.copy( model.getObjectByName('Camera',true).position );
+        //camera.position.copy( model.getObjectByName('Camera',true).position );
 
         pointLight.position.copy( camera.position );
 

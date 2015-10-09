@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>F001</author>
+      <authoring_tool>OpenCOLLADA2015</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=1;preserveSourceTree=0;copyTextures=1;exportTriangles=0;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPhysics=0;exportPolygonMeshes=1;exportLights=0;
+			exportCameras=1;exportJointsAndSkin=0;exportAnimations=1;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///X:/cubolo/cubolo.mb</source_data>
+    </contributor>
+    <created>2015-10-09T04:54:11</created>
+    <modified>2015-10-09T04:54:11</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="cameraShape1" name="cameraShape1">
+      <optics>
+        <technique_common>
+          <perspective>
+            <yfov>37.85003</yfov>
+            <aspect_ratio>1.499947</aspect_ratio>
+            <znear>0.1</znear>
+            <zfar>10000</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <film_fit type="integer">0</film_fit>
+          <film_fit_offset type="double">0</film_fit_offset>
+          <film_offsetX type="double">0</film_offsetX>
+          <film_offsetY type="double">0</film_offsetY>
+          <horizontal_aperture type="double">3.599942</horizontal_aperture>
+          <lens_squeeze type="double">1</lens_squeeze>
+          <originalMayaNodeId type="string">cameraShape1</originalMayaNodeId>
+          <vertical_aperture type="double">2.400046</vertical_aperture>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx"/>
+    </material>
+    <material id="ShaderfxShader1" name="ShaderfxShader1">
+      <instance_effect url="#ShaderfxShader1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="ShaderfxShader1-fx">
+      <profile_COMMON>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <shaderfx/>
+          </technique>
+        </extra>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color>0.4 0.4 0.4 1</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert2-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>1 1 1 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode type="string">NONE</blend_mode>
+                    <coverageU type="float">1</coverageU>
+                    <coverageV type="float">1</coverageV>
+                    <fast type="bool">0</fast>
+                    <mirrorU type="bool">0</mirrorU>
+                    <mirrorV type="bool">0</mirrorV>
+                    <noiseU type="float">0</noiseU>
+                    <noiseV type="float">0</noiseV>
+                    <offsetU type="float">0</offsetU>
+                    <offsetV type="float">0</offsetV>
+                    <repeatU type="float">1</repeatU>
+                    <repeatV type="float">1</repeatV>
+                    <rotateFrame type="float">0</rotateFrame>
+                    <rotateUV type="float">0</rotateUV>
+                    <stagger type="bool">0</stagger>
+                    <translateFrameU type="float">0</translateFrameU>
+                    <translateFrameV type="float">0</translateFrameV>
+                    <wrapU type="bool">1</wrapU>
+                    <wrapV type="bool">1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <texture texture="file2-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode type="string">NONE</blend_mode>
+                    <coverageU type="float">1</coverageU>
+                    <coverageV type="float">1</coverageV>
+                    <fast type="bool">0</fast>
+                    <mirrorU type="bool">0</mirrorU>
+                    <mirrorV type="bool">0</mirrorV>
+                    <noiseU type="float">0</noiseU>
+                    <noiseV type="float">0</noiseV>
+                    <offsetU type="float">0</offsetU>
+                    <offsetV type="float">0</offsetV>
+                    <repeatU type="float">1</repeatU>
+                    <repeatV type="float">1</repeatV>
+                    <rotateFrame type="float">0</rotateFrame>
+                    <rotateUV type="float">0</rotateUV>
+                    <stagger type="bool">0</stagger>
+                    <translateFrameU type="float">0</translateFrameU>
+                    <translateFrameV type="float">0</translateFrameV>
+                    <wrapU type="bool">1</wrapU>
+                    <wrapV type="bool">1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>./text_01.jpg</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type type="string">kFile</dgnode_type>
+          <image_sequence type="bool">0</image_sequence>
+          <originalMayaNodeId type="string">file1</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>./text_alpha_01.jpg</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type type="string">kFile</dgnode_type>
+          <image_sequence type="bool">0</image_sequence>
+          <originalMayaNodeId type="string">file2</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="pCube1Shape" name="pCube1Shape">
+      <mesh>
+        <source id="pCube1Shape-positions" name="pCube1Shape-positions">
+          <float_array id="pCube1Shape-positions-array" count="24">-12.3618 -12.863 12.4695 12.3618 -12.863 12.4695 -12.3618 12.863 12.4695 12.3618 12.863 12.4695 -12.3618 12.863 -12.4695 12.3618 12.863 -12.4695 -12.3618 -12.863 -12.4695 12.3618 -12.863 -12.4695</float_array>
+          <technique_common>
+            <accessor source="#pCube1Shape-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube1Shape-normals" name="pCube1Shape-normals">
+          <float_array id="pCube1Shape-normals-array" count="108">0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#pCube1Shape-normals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube1Shape-map1" name="pCube1Shape-map1">
+          <float_array id="pCube1Shape-map1-array" count="28">0.375 0 0.625 0 0.375 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25</float_array>
+          <technique_common>
+            <accessor source="#pCube1Shape-map1-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCube1Shape-vertices" name="pCube1Shape-vertices">
+          <input semantic="POSITION" source="#pCube1Shape-positions"/>
+        </vertices>
+        <triangles material="pCube1SG" count="12">
+          <input semantic="VERTEX" source="#pCube1Shape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pCube1Shape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pCube1Shape-map1" offset="2" set="0"/>
+          <p>3 0 3 2 1 2 0 2 0 3 3 3 0 4 0 1 5 1 5 6 5 2 7 2 3 8 3 2 9 2 5 10 5 4 11 4 7 12 7 6 13 6 4 14 4 7 15 7 4 16 4 5 17 5 1 18 9 0 19 8 6 20 6 1 21 9 6 22 6 7 23 7 3 24 3 1 25 1 5 26 11 1 27 1 7 28 10 5 29 11 2 30 2 6 31 12 0 32 0 6 33 12 2 34 2 4 35 13</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>pCube1Shape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="cubolo">
+      <node id="pCube1" name="pCube1" type="NODE">
+        <translate sid="translate">-0.238654 12.863 -0.019974</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#pCube1Shape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="pCube1SG" target="#lambert2">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId type="string">pCube1</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+      <node id="camera1" name="camera1" type="NODE">
+        <translate sid="translate">-153.8965 206.0019 -138.9457</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 -110</rotate>
+        <rotate sid="rotateX">1 0 0 -51.59818</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_camera url="#cameraShape1"/>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId type="string">camera1</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <library_animations>
+    <animation id="camera1.translate_camera1">
+      <source id="camera1.translate_camera1_translate-input" name="camera1.translate_camera1_translate-input">
+        <float_array id="camera1.translate_camera1_translate-input-array" count="2">0.04166662 2.583333 </float_array>
+        <technique_common>
+          <accessor source="#camera1.translate_camera1_translate-input-array" count="2" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+        <technique profile="OpenCOLLADAMaya">
+          <pre_infinity>CONSTANT</pre_infinity>
+          <post_infinity>CONSTANT</post_infinity>
+        </technique>
+      </source>
+      <source id="camera1.translate_camera1_translate-output" name="camera1.translate_camera1_translate-output">
+        <float_array id="camera1.translate_camera1_translate-output-array" count="6">-55.35132 41.49055 95.87538 -153.8965 206.0019 -138.9457 </float_array>
+        <technique_common>
+          <accessor source="#camera1.translate_camera1_translate-output-array" count="2" stride="3">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+            <param name="Z" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.translate_camera1_translate-interpolation" name="camera1.translate_camera1_translate-interpolation">
+        <Name_array id="camera1.translate_camera1_translate-interpolation-array" count="2">BEZIER BEZIER </Name_array>
+        <technique_common>
+          <accessor source="#camera1.translate_camera1_translate-interpolation-array" count="2" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.translate_camera1_translate-intangent" name="camera1.translate_camera1_translate-intangent">
+        <float_array id="camera1.translate_camera1_translate-intangent-array" count="12">-0.2916667 -55.35132 -0.2916667 41.49055 -0.2916667 95.87538 1.736111 -153.8965 1.736111 206.0019 1.736111 -138.9457 </float_array>
+        <technique_common>
+          <accessor source="#camera1.translate_camera1_translate-intangent-array" count="2" stride="6">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.translate_camera1_translate-outtangent" name="camera1.translate_camera1_translate-outtangent">
+        <float_array id="camera1.translate_camera1_translate-outtangent-array" count="12">0.8888888 -55.35132 0.8888888 41.49055 0.8888888 95.87538 2.916666 -153.8965 2.916666 206.0019 2.916666 -138.9457 </float_array>
+        <technique_common>
+          <accessor source="#camera1.translate_camera1_translate-outtangent-array" count="2" stride="6">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="camera1.translate_camera1_translate-sampler">
+        <input semantic="INPUT" source="#camera1.translate_camera1_translate-input"/>
+        <input semantic="OUTPUT" source="#camera1.translate_camera1_translate-output"/>
+        <input semantic="INTERPOLATION" source="#camera1.translate_camera1_translate-interpolation"/>
+        <input semantic="IN_TANGENT" source="#camera1.translate_camera1_translate-intangent"/>
+        <input semantic="OUT_TANGENT" source="#camera1.translate_camera1_translate-outtangent"/>
+      </sampler>
+      <channel source="#camera1.translate_camera1_translate-sampler" target="camera1/translate"/>
+    </animation>
+    <animation id="camera1.rotateZ_camera1">
+      <source id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-input" name="camera1.rotateZ_camera1_camera1.rotateZ_camera1-input">
+        <float_array id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-input-array" count="2">0.04166662 2.583333 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-input-array" count="2" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+        <technique profile="OpenCOLLADAMaya">
+          <pre_infinity>CONSTANT</pre_infinity>
+          <post_infinity>CONSTANT</post_infinity>
+        </technique>
+      </source>
+      <source id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-output" name="camera1.rotateZ_camera1_camera1.rotateZ_camera1-output">
+        <float_array id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-output-array" count="2">0 0 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-output-array" count="2" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-interpolation" name="camera1.rotateZ_camera1_camera1.rotateZ_camera1-interpolation">
+        <Name_array id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-interpolation-array" count="2">BEZIER BEZIER </Name_array>
+        <technique_common>
+          <accessor source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-interpolation-array" count="2" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-intangent" name="camera1.rotateZ_camera1_camera1.rotateZ_camera1-intangent">
+        <float_array id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-intangent-array" count="4">-0.2916667 0 1.736111 0 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-intangent-array" count="2" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-outtangent" name="camera1.rotateZ_camera1_camera1.rotateZ_camera1-outtangent">
+        <float_array id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-outtangent-array" count="4">0.8888888 0 2.916666 0 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-outtangent-array" count="2" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="camera1.rotateZ_camera1_camera1.rotateZ_camera1-sampler">
+        <input semantic="INPUT" source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-input"/>
+        <input semantic="OUTPUT" source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-output"/>
+        <input semantic="INTERPOLATION" source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-interpolation"/>
+        <input semantic="IN_TANGENT" source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-intangent"/>
+        <input semantic="OUT_TANGENT" source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-outtangent"/>
+      </sampler>
+      <channel source="#camera1.rotateZ_camera1_camera1.rotateZ_camera1-sampler" target="camera1/rotateZ.ANGLE"/>
+    </animation>
+    <animation id="camera1.rotateY_camera1">
+      <source id="camera1.rotateY_camera1_camera1.rotateY_camera1-input" name="camera1.rotateY_camera1_camera1.rotateY_camera1-input">
+        <float_array id="camera1.rotateY_camera1_camera1.rotateY_camera1-input-array" count="2">0.04166662 2.583333 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateY_camera1_camera1.rotateY_camera1-input-array" count="2" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+        <technique profile="OpenCOLLADAMaya">
+          <pre_infinity>CONSTANT</pre_infinity>
+          <post_infinity>CONSTANT</post_infinity>
+        </technique>
+      </source>
+      <source id="camera1.rotateY_camera1_camera1.rotateY_camera1-output" name="camera1.rotateY_camera1_camera1.rotateY_camera1-output">
+        <float_array id="camera1.rotateY_camera1_camera1.rotateY_camera1-output-array" count="2">-30 -110 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateY_camera1_camera1.rotateY_camera1-output-array" count="2" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateY_camera1_camera1.rotateY_camera1-interpolation" name="camera1.rotateY_camera1_camera1.rotateY_camera1-interpolation">
+        <Name_array id="camera1.rotateY_camera1_camera1.rotateY_camera1-interpolation-array" count="2">BEZIER BEZIER </Name_array>
+        <technique_common>
+          <accessor source="#camera1.rotateY_camera1_camera1.rotateY_camera1-interpolation-array" count="2" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateY_camera1_camera1.rotateY_camera1-intangent" name="camera1.rotateY_camera1_camera1.rotateY_camera1-intangent">
+        <float_array id="camera1.rotateY_camera1_camera1.rotateY_camera1-intangent-array" count="4">-0.2916667 -30 1.736111 -110 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateY_camera1_camera1.rotateY_camera1-intangent-array" count="2" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateY_camera1_camera1.rotateY_camera1-outtangent" name="camera1.rotateY_camera1_camera1.rotateY_camera1-outtangent">
+        <float_array id="camera1.rotateY_camera1_camera1.rotateY_camera1-outtangent-array" count="4">0.8888888 -30 2.916666 -110 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateY_camera1_camera1.rotateY_camera1-outtangent-array" count="2" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="camera1.rotateY_camera1_camera1.rotateY_camera1-sampler">
+        <input semantic="INPUT" source="#camera1.rotateY_camera1_camera1.rotateY_camera1-input"/>
+        <input semantic="OUTPUT" source="#camera1.rotateY_camera1_camera1.rotateY_camera1-output"/>
+        <input semantic="INTERPOLATION" source="#camera1.rotateY_camera1_camera1.rotateY_camera1-interpolation"/>
+        <input semantic="IN_TANGENT" source="#camera1.rotateY_camera1_camera1.rotateY_camera1-intangent"/>
+        <input semantic="OUT_TANGENT" source="#camera1.rotateY_camera1_camera1.rotateY_camera1-outtangent"/>
+      </sampler>
+      <channel source="#camera1.rotateY_camera1_camera1.rotateY_camera1-sampler" target="camera1/rotateY.ANGLE"/>
+    </animation>
+    <animation id="camera1.rotateX_camera1">
+      <source id="camera1.rotateX_camera1_camera1.rotateX_camera1-input" name="camera1.rotateX_camera1_camera1.rotateX_camera1-input">
+        <float_array id="camera1.rotateX_camera1_camera1.rotateX_camera1-input-array" count="2">0.04166662 2.583333 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateX_camera1_camera1.rotateX_camera1-input-array" count="2" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+        <technique profile="OpenCOLLADAMaya">
+          <pre_infinity>CONSTANT</pre_infinity>
+          <post_infinity>CONSTANT</post_infinity>
+        </technique>
+      </source>
+      <source id="camera1.rotateX_camera1_camera1.rotateX_camera1-output" name="camera1.rotateX_camera1_camera1.rotateX_camera1-output">
+        <float_array id="camera1.rotateX_camera1_camera1.rotateX_camera1-output-array" count="2">-16.19943 -51.59817 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateX_camera1_camera1.rotateX_camera1-output-array" count="2" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateX_camera1_camera1.rotateX_camera1-interpolation" name="camera1.rotateX_camera1_camera1.rotateX_camera1-interpolation">
+        <Name_array id="camera1.rotateX_camera1_camera1.rotateX_camera1-interpolation-array" count="2">BEZIER BEZIER </Name_array>
+        <technique_common>
+          <accessor source="#camera1.rotateX_camera1_camera1.rotateX_camera1-interpolation-array" count="2" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateX_camera1_camera1.rotateX_camera1-intangent" name="camera1.rotateX_camera1_camera1.rotateX_camera1-intangent">
+        <float_array id="camera1.rotateX_camera1_camera1.rotateX_camera1-intangent-array" count="4">-0.2916667 -16.19943 1.736111 -51.59817 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateX_camera1_camera1.rotateX_camera1-intangent-array" count="2" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="camera1.rotateX_camera1_camera1.rotateX_camera1-outtangent" name="camera1.rotateX_camera1_camera1.rotateX_camera1-outtangent">
+        <float_array id="camera1.rotateX_camera1_camera1.rotateX_camera1-outtangent-array" count="4">0.8888888 -16.19943 2.916666 -51.59817 </float_array>
+        <technique_common>
+          <accessor source="#camera1.rotateX_camera1_camera1.rotateX_camera1-outtangent-array" count="2" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="camera1.rotateX_camera1_camera1.rotateX_camera1-sampler">
+        <input semantic="INPUT" source="#camera1.rotateX_camera1_camera1.rotateX_camera1-input"/>
+        <input semantic="OUTPUT" source="#camera1.rotateX_camera1_camera1.rotateX_camera1-output"/>
+        <input semantic="INTERPOLATION" source="#camera1.rotateX_camera1_camera1.rotateX_camera1-interpolation"/>
+        <input semantic="IN_TANGENT" source="#camera1.rotateX_camera1_camera1.rotateX_camera1-intangent"/>
+        <input semantic="OUT_TANGENT" source="#camera1.rotateX_camera1_camera1.rotateX_camera1-outtangent"/>
+      </sampler>
+      <channel source="#camera1.rotateX_camera1_camera1.rotateX_camera1-sampler" target="camera1/rotateX.ANGLE"/>
+    </animation>
+  </library_animations>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

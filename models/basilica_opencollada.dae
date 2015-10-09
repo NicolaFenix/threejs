@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>F001</author>
+      <authoring_tool>OpenCOLLADA2015</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=0;relativePaths=1;preserveSourceTree=0;copyTextures=1;exportTriangles=0;exportCgfxFileReferences=1;
+			isSampling=0;curveConstrainSampling=0;removeStaticCurves=1;exportPhysics=0;exportPolygonMeshes=1;exportLights=0;
+			exportCameras=1;exportJointsAndSkin=0;exportAnimations=1;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=1;exportVertexColorsPerVertex=1;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///X:/venezia_wip/untitled</source_data>
+    </contributor>
+    <created>2015-10-09T14:34:41</created>
+    <modified>2015-10-09T14:34:41</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <newparam sid="file1-surface">
+          <surface type="2D">
+            <init_from>file1</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file1-sampler">
+          <sampler2D>
+            <source>file1-surface</source>
+          </sampler2D>
+        </newparam>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file1-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode type="string">NONE</blend_mode>
+                    <coverageU type="float">1</coverageU>
+                    <coverageV type="float">1</coverageV>
+                    <fast type="bool">0</fast>
+                    <mirrorU type="bool">0</mirrorU>
+                    <mirrorV type="bool">0</mirrorV>
+                    <noiseU type="float">0</noiseU>
+                    <noiseV type="float">0</noiseV>
+                    <offsetU type="float">0</offsetU>
+                    <offsetV type="float">0</offsetV>
+                    <repeatU type="float">1</repeatU>
+                    <repeatV type="float">1</repeatV>
+                    <rotateFrame type="float">0</rotateFrame>
+                    <rotateUV type="float">0</rotateUV>
+                    <stagger type="bool">0</stagger>
+                    <translateFrameU type="float">0</translateFrameU>
+                    <translateFrameV type="float">0</translateFrameV>
+                    <wrapU type="bool">1</wrapU>
+                    <wrapV type="bool">1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="A_ONE">
+              <texture texture="file2-sampler" texcoord="TEX1">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode type="string">NONE</blend_mode>
+                    <coverageU type="float">1</coverageU>
+                    <coverageV type="float">1</coverageV>
+                    <fast type="bool">0</fast>
+                    <mirrorU type="bool">0</mirrorU>
+                    <mirrorV type="bool">0</mirrorV>
+                    <noiseU type="float">0</noiseU>
+                    <noiseV type="float">0</noiseV>
+                    <offsetU type="float">0</offsetU>
+                    <offsetV type="float">0</offsetV>
+                    <repeatU type="float">1</repeatU>
+                    <repeatV type="float">1</repeatV>
+                    <rotateFrame type="float">0</rotateFrame>
+                    <rotateUV type="float">0</rotateUV>
+                    <stagger type="bool">0</stagger>
+                    <translateFrameU type="float">0</translateFrameU>
+                    <translateFrameV type="float">0</translateFrameV>
+                    <wrapU type="bool">1</wrapU>
+                    <wrapV type="bool">1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file1" name="file1">
+      <init_from>./basili-front.jpg</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type type="string">kFile</dgnode_type>
+          <image_sequence type="bool">0</image_sequence>
+          <originalMayaNodeId type="string">file1</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+    <image id="file2" name="file2">
+      <init_from>./basili-front_alpha.jpg</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type type="string">kFile</dgnode_type>
+          <image_sequence type="bool">0</image_sequence>
+          <originalMayaNodeId type="string">file2</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="pPlaneShape1" name="pPlaneShape1">
+      <mesh>
+        <source id="pPlaneShape1-positions" name="pPlaneShape1-positions">
+          <float_array id="pPlaneShape1-positions-array" count="12">-37.785 0 16.615 37.785 0 16.615 -37.785 0 -16.615 37.785 0 -16.615</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-normals" name="pPlaneShape1-normals">
+          <float_array id="pPlaneShape1-normals-array" count="12">0 1 0 0 1 0 0 1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPlaneShape1-map1" name="pPlaneShape1-map1">
+          <float_array id="pPlaneShape1-map1-array" count="8">0 0.0198437 1 0.0198437 0 0.999794 1 0.999794</float_array>
+          <technique_common>
+            <accessor source="#pPlaneShape1-map1-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPlaneShape1-vertices" name="pPlaneShape1-vertices">
+          <input semantic="POSITION" source="#pPlaneShape1-positions"/>
+          <input semantic="NORMAL" source="#pPlaneShape1-normals"/>
+        </vertices>
+        <polylist material="initialShadingGroup" count="1">
+          <input semantic="VERTEX" source="#pPlaneShape1-vertices" offset="0"/>
+          <input semantic="TEXCOORD" source="#pPlaneShape1-map1" offset="1" set="0"/>
+          <vcount>4</vcount>
+          <p>0 0 1 1 3 3 2 2</p>
+        </polylist>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>pPlaneShape1</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="untitled">
+      <node id="pPlane1" name="pPlane1" type="NODE">
+        <translate sid="translate">-0.3013429 9.658845 -0.1063538</translate>
+        <rotate sid="rotateZ">0 0 1 0</rotate>
+        <rotate sid="rotateY">0 1 0 0</rotate>
+        <rotate sid="rotateX">1 0 0 90</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#pPlaneShape1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="initialShadingGroup" target="#lambert1">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="TEX1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId type="string">pPlane1</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>
