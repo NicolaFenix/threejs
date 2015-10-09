@@ -5,6 +5,7 @@
     <title>three.js webgl - collada</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <style>
 
         body {
@@ -31,7 +32,7 @@
 </head>
 <body>
 
-<div id="test" style="display: block; width: 500px; height: 500px; background-color: red"></div>
+<div id="test"></div>
 
 
 <script src="js/three.min.js"></script>
@@ -59,7 +60,7 @@
     var lastTimestamp = 0;
     var progress = 0;
 
-    loader.load( 'models/anim9.dae', function ( collada ) {
+    loader.load( 'models/cubo4.dae', function ( collada ) {
 
         model = collada.scene;
         animations = collada.animations;
@@ -72,10 +73,31 @@
         start();
         update( lastTimestamp );
 
+        callback();
+
         //document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
         //document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
 
     }   );
+
+    function callback(){
+//        model.traverse(function(child) {
+//
+//            if (child instanceof THREE.PerspectiveCamera) {
+//
+//                camera = child;
+//                camera.near = 1;
+//                camera.fov = 30;
+//                camera.castShadow = true;
+//            }
+//
+//
+//        });
+//
+//        camera.aspect = window.innerWidth / window.innerHeight;
+//
+//        camera.updateProjectionMatrix();
+    }
 
     function init() {
 
@@ -88,19 +110,19 @@
 
 
         // Camera
-        model.getObjectByName( 'Camera', true ).visible = true;
-        console.log();
+//        model.getObjectByName( 'Camera', true ).visible = true;
+//        console.log();
 
 
         camera = new THREE.PerspectiveCamera( 36, window.innerWidth / window.innerHeight, 0.01, 100000 );
-        camera.position.copy( model.getObjectByName('Camera',true).position );
+        //camera.position.copy( model.getObjectByName('Camera',true).position );
 
 
         // Scene
 
         scene = new THREE.Scene();
 
-        camera.lookAt(model.getObjectByName('Camera.Target.1',true).position);
+
 
         // KeyFrame Animations
 
@@ -244,15 +266,37 @@
 
         var cooD = e;
 
-        if (kfAnimations[0].currentTime > VIDEO_END){
-            cooD = (VIDEO_END - kfAnimations[0].currentTime) * -1 ;
-        }
 
-        if ( kfAnimations[0].currentTime < VIDEO_INIT){
-            cooD =  (VIDEO_INIT - kfAnimations[0].currentTime) * -1 ;
-        }
+        model.traverse(function(child) {
 
-        console.log(e + ' - ' + cooD  +' - ' +  kfAnimations[0].currentTime)
+            if (child instanceof THREE.PerspectiveCamera) {
+
+                camera = child;
+                camera.near = 10;
+//                camera.fov = 30;
+//                camera.castShadow = true;
+                var vector = new THREE.Vector3();
+                vector.setFromMatrixPosition( model.matrixWorld );
+
+                camera.lookAt( vector );
+            }
+
+
+        });
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+
+        camera.updateProjectionMatrix();
+
+//        if (kfAnimations[0].currentTime > VIDEO_END){
+//            cooD = (VIDEO_END - kfAnimations[0].currentTime) * -1 ;
+//        }
+//
+//        if ( kfAnimations[0].currentTime < VIDEO_INIT){
+//            cooD =  (VIDEO_INIT - kfAnimations[0].currentTime) * -1 ;
+//        }
+
+        //console.log(e + ' - ' + cooD  +' - ' +  kfAnimations[0].currentTime)
         //console.log( kfAnimations[0].currentTime)
 
 //        console.log(cooD)

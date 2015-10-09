@@ -20,3 +20,11 @@ canvas {
   height: 100%;
   //background-color: red; //It works!!!
 }
+
+#test{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
