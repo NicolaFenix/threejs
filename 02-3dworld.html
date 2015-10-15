@@ -62,11 +62,61 @@
 
 
 
+        // texture
+
+        var manager = new THREE.LoadingManager();
+        manager.onProgress = function ( item, loaded, total ) {
+
+            console.log( item, loaded, total );
+
+                console.log( (loaded / total * 100) + '% loaded' );
+
+
+        };
+
+
+        manager.onLoad = function () {
+            // All the texure are loaded
+            console.log( 'all Loaded' );
+        };
+
+
+        var nuvoleTexture = new THREE.Texture();
+        var terraTexture = new THREE.Texture();
+        var terraNormal = new THREE.Texture();
+        var terraSpec = new THREE.Texture();
+
+
+        var loader = new THREE.ImageLoader( manager );
+        loader.load( 'images/fair_clouds_4k.png', function ( image ) {  nuvoleTexture.image = image; nuvoleTexture.needsUpdate = true; } );
+        loader.load( 'images/earthmap4k.jpg', function ( image ) {  terraTexture.image = image; terraTexture.needsUpdate = true; } );
+        loader.load( 'images/earth_normalmap_flat4k.jpg', function ( image ) {  terraNormal.image = image; terraNormal.needsUpdate = true; } );
+        loader.load( 'images/earthspec4k.jpg', function ( image ) {  terraSpec.image = image; terraSpec.needsUpdate = true; } );
+
+//        loader.load( 'images/earthmap4k.jpg', function ( image ) {
+//
+//            terraTexture.image = image;
+//            terraTexture.needsUpdate = true;
+//
+//        } );
+
+
+//
+//        var onProgress = function ( xhr ) {
+//            if ( xhr.lengthComputable ) {
+//                var percentComplete = xhr.loaded / xhr.total * 100;
+//                console.log( Math.round(percentComplete, 2) + '% downloaded' );
+//            }
+//        };
+//
+//        var onError = function ( xhr ) {
+//        };
+
 
 
 
         // Create cloud material
-        var nuvoleTexture = THREE.ImageUtils.loadTexture('images/fair_clouds_4k.png');
+       // var nuvoleTexture = THREE.ImageUtils.loadTexture('images/fair_clouds_4k.png');
         var nuvoleMateriale = new THREE.MeshPhongMaterial();
 
         nuvoleMateriale.map = nuvoleTexture;
@@ -76,9 +126,9 @@
         //Terra
         var sferaGeometria = new THREE.SphereGeometry(15, 30, 30); // Radius, number of width segment, number of height segment Only radius is required
         // Create earth material
-        var terraTexture = THREE.ImageUtils.loadTexture('images/earthmap4k.jpg');
-        var terraNormal = THREE.ImageUtils.loadTexture('images/earth_normalmap_flat4k.jpg');
-        var terraSpec = THREE.ImageUtils.loadTexture('images/earthspec4k.jpg');
+        //var terraTexture = THREE.ImageUtils.loadTexture('images/earthmap4k.jpg');
+        //var terraNormal = THREE.ImageUtils.loadTexture('images/earth_normalmap_flat4k.jpg');
+        //var terraSpec = THREE.ImageUtils.loadTexture('images/earthspec4k.jpg');
         var terraMateriale = new THREE.MeshPhongMaterial(); // Reacts to lights
 
         terraMateriale.map = terraTexture;
@@ -187,7 +237,7 @@
         //renderer.render(scena, camera);
         renderer.autoClear = false;
         composer.render();
-        requestAnimationFrame(render);
+        //requestAnimationFrame(render);
 
 
     }
