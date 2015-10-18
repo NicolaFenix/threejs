@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,35 +58,18 @@
     var loader = new THREE.ColladaLoader();
     var lastTimestamp = 0;
     var progress = 0;
+    var currentTime = 0;
+    var cubo;
+    var cerchioAlpha;
+    var chiesaAlpha;
+            initialized = false;
 
-    loader.load( 'collada/cubo9.dae', function ( collada ) {
-
-
-
-
-        model = collada.scene;
-        animations = collada.animations;
-        console.log(animations);
-        kfAnimationsLength = animations.length;
-
-        model.scale.x = model.scale.y = model.scale.z = 1; // 1/8 scale, modeled in cm
-
-        init();
-        start();
-        update( lastTimestamp );
-
-        callback(model);
-        cubo = model.getObjectByName("Cube",true);
-
-        //document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
-        //document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
-
-    }   );
+    var modelPath = 'collada/chiesa15.dae';
 
     function callback(model){
 
 
-        console.log(model);
+        //console.log(model);
 
 
 //        model.traverse(function(child) {
@@ -110,13 +92,11 @@
 
     function init() {
 
+        console.log('BEGIN init()')
+
         var container = document.createElement( 'div' );
         document.body.appendChild( container );
         container.id = 'wheel';
-
-
-
-
 
         // Camera
 //        model.getObjectByName( 'Camera', true ).visible = true;
@@ -145,6 +125,9 @@
 
         }
 
+
+
+
         // Grid
 
 //        var material = new THREE.LineBasicMaterial( { color: 0x303030 } );
@@ -168,15 +151,28 @@
 
 //        model.getObjectByName( 'pasted__pCube1', true ).visible = false;
 
+
+
+//        var sferaGeometria = new THREE.SphereGeometry(100, 30, 30); // Radius, number of width segment, number of height segment Only radius is required
+//        var terraMateriale = new THREE.MeshPhongMaterial(); // Reacts to lights
+//
+//        terraMateriale.map = cerchioAlpha;
+//        terraMateriale.alphaMap = cerchioAlpha;
+//        terraMateriale.transparent = true
+//
+//        var terraMesh = new THREE.Mesh(sferaGeometria, terraMateriale);
+//
+//        scene.add( terraMesh );
         scene.add( model );
+
 
         // Lights
 
-        pointLight = new THREE.PointLight( 0xffffff, 1);
-        scene.add( pointLight );
+//        pointLight = new THREE.PointLight( 0xffffff, 1);
+//        scene.add( pointLight );
 
-        var light = new THREE.AmbientLight( 0x404040 ); // soft white light
-        scene.add( light );
+//        var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+//        scene.add( light );
 
 
 //        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
@@ -197,7 +193,7 @@
 
         // Renderer
 
-        renderer = new THREE.WebGLRenderer( { antialias: true } );
+        renderer = new THREE.WebGLRenderer( { antialias:true, alpha:true, logarithmicDepthBuffer: true  } );
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
         container.appendChild( renderer.domElement );
@@ -211,8 +207,11 @@
         container.appendChild( stats.domElement );
 
         //
+        console.log(renderer);
 
         window.addEventListener( 'resize', onWindowResize, false );
+
+        console.log('END init()')
 
     }
 
@@ -226,6 +225,8 @@
     }
 
     function start() {
+
+        console.log('BEGIN start()')
 
         for ( var i = 0; i < kfAnimationsLength; ++i ) {
 
@@ -263,11 +264,17 @@
 
         }
 
+
+        console.log('END start()')
+
+
     }
 
     function update( e ) {
 
+        //console.log(e)
 
+        
 
         //var frameTime = ( timestamp - lastTimestamp ) * 0.001;
 //
@@ -292,70 +299,98 @@
 //
 //        }
 
+        //console.log(scene)
+
         var VIDEO_INIT = 0,
-                VIDEO_END = 2.4;
+                VIDEO_END = 9.9,
+                auxTime;
 
-        var cooD = e;
+        auxTime = currentTime + e;
 
+        if (auxTime <= VIDEO_END & auxTime >= VIDEO_INIT){
 
-        model.traverse(function(child) {
+            currentTime = auxTime;
 
-            if (child instanceof THREE.PerspectiveCamera) {
+            var cooD = e;
 
-                camera = child;
-                //camera.near = 0;
+            model.traverse(function(child) {
+
+                //console.log(child)
+
+                if (child instanceof THREE.PerspectiveCamera) {
+
+                    camera = child;
+                    //camera.near = 0;
 //                camera.fov = 30;
 //                camera.castShadow = true;
-                var vector = new THREE.Vector3();
-                vector.setFromMatrixPosition( model.matrixWorld );
+                    var vector = new THREE.Vector3();
+                    vector.setFromMatrixPosition( model.matrixWorld );
 
-                //camera.lookAt( vector );
-            }
+                    //camera.lookAt( vector );
+                }
 
 
-        });
+            });
 
-        camera.aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = window.innerWidth / window.innerHeight;
 
-        camera.near = 10;
-        camera.updateProjectionMatrix();
+            camera.near = 10;
+            camera.updateProjectionMatrix();
 
-//        if (kfAnimations[0].currentTime > VIDEO_END){
-//            cooD = (VIDEO_END - kfAnimations[0].currentTime) * -1 ;
-//        }
-//
-//        if ( kfAnimations[0].currentTime < VIDEO_INIT){
-//            cooD =  (VIDEO_INIT - kfAnimations[0].currentTime) * -1 ;
-//        }
+            for ( var i = 0; i < kfAnimationsLength; ++i ) {
 
-        //console.log(e + ' - ' + cooD  +' - ' +  kfAnimations[0].currentTime)
-        //console.log( kfAnimations[0].currentTime)
-
-//        console.log(cooD)
-
-        for ( var i = 0; i < kfAnimationsLength; ++i ) {
 
                 //kfAnimations[ i ].update( animations[0].length - 0.01 );
                 kfAnimations[ i ].update( cooD );
 
 
             }
+        }
+
 
         //console.log( kfAnimations[2]);
         //camera.position.copy( model.getObjectByName('Camera',true).position );
         //camera.position.set(500,500,500);
-        pointLight.position.set(0,200,200);
+        //pointLight.position.set(0,200,200);
 
         //progress += frameTime;
 //        lastTimestamp = timestamp;
         renderer.render( scene, camera );
         stats.update();
-        //requestAnimationFrame( animate );
+        startAnimation()
 
     }
 
-    /* Dani */
+    var requestId;
 
+    function loop() {
+        requestId = window.requestAnimationFrame(tempReq);
+
+    }
+
+    function startAnimation() {
+        if (!requestId & !initialized) {
+            initialized = true;
+            loop();
+        }
+    }
+
+    function stopAnimation() {
+
+        if (requestId) {
+            console.log('STOP loop')
+            window.cancelAnimationFrame(requestId);
+            requestId = undefined;
+        }
+    }
+
+    var tempReq = function (){
+
+        update(0);
+        loop();
+    } ;
+
+    /* Dani */
 
     var wheelDistance = function(evt){
         if (!evt) evt = event;
@@ -389,32 +424,128 @@
 
     }
 
-    console.log($('#test'))
+    var Animation = {
 
-    $('#test').momentus({
-        u: 10,
-        mass: 1000,
-        wheelRatio: -1000,
-        mouseRatio: 6,
-        onChange: function(coords){
+        init : function () {
 
-            var progress = (coords.y - lastTimestamp);
-            //console.log(coords.y)
-            //console.log('progress '+ progress);
-            //console.log('lastTimestamp '+ lastTimestamp);
+            this.loadModel();
 
-            update(progress.toFixed(2) * 0.01);
+        },
 
-            lastTimestamp = coords.y;
+        bindEventListeners : function (){
+
+            $('#test').momentus({
+                //u: 10,
+                //mass: 1000,
+                //wheelRatio: -1000,
+                //mouseRatio: 6,
+                onChange: function(coords){
+
+                    stopAnimation();
+
+                    //console.log('scroll ' + Math.random())
+
+                    var progress = (coords.y - lastTimestamp);
+                    //console.log(coords.y)
+                    //console.log('progress '+ progress);
+                    //console.log('lastTimestamp '+ lastTimestamp);
+
+                    update(progress.toFixed(2) * 0.01);
+
+                    lastTimestamp = coords.y;
 
 //            $('.wheel > div').each(function(i){
 //                //var angle = -(coords.y/2) + (360/10)*i;
 //                //$(this).css('transform', 'perspective(500px) rotate3d(1,0,0,'+angle+'deg) translate3d(0,0,122px)');
 //            });
+                }
+            });
+
+
+            //document.addEventListener( 'mousewheel', handleScroll, false );     // Chrome/Safari/Opera
+            //document.addEventListener( 'DOMMouseScroll', handleScroll, false ); // Firefox
+
+        },
+
+        loadModel : function () {
+
+            var self = this;
+
+            loader.load( modelPath, function ( collada ) {
+
+                console.log(collada)
+
+                model = collada.scene;
+                animations = collada.animations;
+                kfAnimationsLength = animations.length;
+
+                model.scale.x = model.scale.y = model.scale.z = 0.1; // 1/8 scale, modeled in cm
+
+
+
+                // Aggiungo Manualmente il canale alpha alle texture
+
+                var manager = new THREE.LoadingManager();
+                manager.onProgress = function ( item, loaded, total ) {
+
+                    console.log( item, loaded, total );
+
+                    console.log( (loaded / total * 100) + '% loaded' );
+
+
+                };
+
+
+                manager.onLoad = function () {
+                    // All the texure are loaded
+                    console.log( 'all Loaded' );
+                };
+
+
+                cerchioAlpha = new THREE.Texture();
+                chiesaAlpha = new THREE.Texture();
+
+
+                var loader = new THREE.ImageLoader( manager );
+                loader.load( 'collada/cerchioRossoAlpha.jpg', function ( image ) {  cerchioAlpha.image = image; cerchioAlpha.needsUpdate = true; } );
+                loader.load( 'collada/chiesa_alpha.jpg', function ( image ) {  chiesaAlpha.image = image; chiesaAlpha.needsUpdate = true; } );
+
+
+                var cerchio = model.getObjectByName("cerchio",true);
+                var cerchioMat = cerchio.children[0].material;
+
+                cerchioMat.alphaMap = cerchioAlpha;
+                cerchioMat.transparent = true;
+                cerchioMat.side = THREE.DoubleSide;
+
+
+                var chiesa = model.getObjectByName("chiesa",true);
+                var chiesaMat = chiesa.children[0].material;
+
+                chiesaMat.alphaMap = chiesaAlpha;
+                chiesaMat.transparent = true;
+                chiesaMat.side = THREE.DoubleSide;
+
+
+
+
+                self.bindEventListeners();
+
+                init();
+                start();
+
+                update( lastTimestamp);
+
+                //callback(model);
+
+
+            } );
+
         }
-    });
 
+    };
 
+    Animation.init();
 
 </script>
 </body>
