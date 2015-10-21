@@ -501,31 +501,48 @@
                     console.log( 'all Loaded' );
                 };
 
-
-                cerchioAlpha = new THREE.Texture();
-                chiesaAlpha = new THREE.Texture();
-
-
                 var loader = new THREE.ImageLoader( manager );
-                loader.load( 'collada/cerchioRossoAlpha.jpg', function ( image ) {  cerchioAlpha.image = image; cerchioAlpha.needsUpdate = true; } );
-                loader.load( 'collada/chiesa_alpha.jpg', function ( image ) {  chiesaAlpha.image = image; chiesaAlpha.needsUpdate = true; } );
 
+                var forbiddenNames = ['Light', 'Plane', 'Camera', 'chiesa'];
 
-                var cerchio = model.getObjectByName("cerchio",true);
-                var cerchioMat = cerchio.children[0].material;
+                var children = collada.scene.children || [];
 
-                cerchioMat.alphaMap = cerchioAlpha;
-                cerchioMat.transparent = true;
-                cerchioMat.side = THREE.DoubleSide;
+                for (var i = 0 ; i < children.length; i ++)  {
+                    var name = children[i].name;
 
+                    if ($.inArray(name, forbiddenNames) < 0){
 
-                var chiesa = model.getObjectByName("chiesa",true);
-                var chiesaMat = chiesa.children[0].material;
+                        loadAlpha(name);
 
-                chiesaMat.alphaMap = chiesaAlpha;
-                chiesaMat.transparent = true;
-                chiesaMat.side = THREE.DoubleSide;
+                    }
+                }
+                self.bindEventListeners();
 
+                function loadAlpha(name){
+
+                    var file = 'collada/' + name + '_alpha.jpg';
+
+                    loader.load( file, function ( image ) {
+                        console.log(image, file)
+                        var  texture = new THREE.Texture();
+                        texture.image = image;
+                        texture.needsUpdate = true;
+
+                        var cerchio = model.getObjectByName(name,true);
+                        var cerchioMat = cerchio.children[0].material;
+
+                        console.log('------------------')
+                        console.log(texture)
+                        console.log(cerchioMat)
+
+                        cerchioMat.alphaMap = texture;
+                        console.log(cerchioMat)
+                        cerchioMat.transparent = true;
+                        cerchioMat.side = THREE.DoubleSide;
+
+                    } );
+
+                }
 
 
 
