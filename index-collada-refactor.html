@@ -21,11 +21,13 @@
             width: 100%;
             text-align: center;
             z-index: 100;
-            display:block;
+            display: block;
 
         }
 
-        a { color: skyblue }
+        a {
+            color: skyblue
+        }
 
     </style>
 </head>
@@ -44,7 +46,7 @@
 
 <script>
 
-    if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+    if (!Detector.webgl) Detector.addGetWebGLMessage();
 
     var stats;
     var scene;
@@ -53,7 +55,7 @@
     var renderer;
     var model;
     var animations;
-    var kfAnimations = [ ];
+    var kfAnimations = [];
     var kfAnimationsLength = 0;
     var loader = new THREE.ColladaLoader();
     var lastTimestamp = 0;
@@ -62,40 +64,16 @@
     var cubo;
     var cerchioAlpha;
     var chiesaAlpha;
-            initialized = false;
+    initialized = false;
 
     var modelPath = 'collada/chiesa15.dae';
-
-    function callback(model){
-
-
-        //console.log(model);
-
-
-//        model.traverse(function(child) {
-//
-//            if (child instanceof THREE.PerspectiveCamera) {
-//
-//                camera = child;
-//                camera.near = 1;
-//                camera.fov = 30;
-//                camera.castShadow = true;
-//            }
-//
-//
-//        });
-//
-//        camera.aspect = window.innerWidth / window.innerHeight;
-//
-//        camera.updateProjectionMatrix();
-    }
 
     function init() {
 
         console.log('BEGIN init()')
 
-        var container = document.createElement( 'div' );
-        document.body.appendChild( container );
+        var container = document.createElement('div');
+        document.body.appendChild(container);
         container.id = 'wheel';
 
         // Camera
@@ -103,7 +81,7 @@
 //        console.log();
 
 
-        camera = new THREE.PerspectiveCamera( 36, window.innerWidth / window.innerHeight, 0.01, 100000 );
+        camera = new THREE.PerspectiveCamera(36, window.innerWidth / window.innerHeight, 0.01, 100000);
         //camera.position.copy( model.getObjectByName('Camera',true).position );
 
 
@@ -112,20 +90,17 @@
         scene = new THREE.Scene();
 
 
-
         // KeyFrame Animations
 
-        for ( var i = 0; i < kfAnimationsLength; ++i ) {
+        for (var i = 0; i < kfAnimationsLength; ++i) {
 
-            var animation = animations[ i ];
+            var animation = animations[i];
 
-            var kfAnimation = new THREE.KeyFrameAnimation( animation );
+            var kfAnimation = new THREE.KeyFrameAnimation(animation);
             kfAnimation.timeScale = 1;
-            kfAnimations.push( kfAnimation );
+            kfAnimations.push(kfAnimation);
 
         }
-
-
 
 
         // Grid
@@ -152,7 +127,6 @@
 //        model.getObjectByName( 'pasted__pCube1', true ).visible = false;
 
 
-
 //        var sferaGeometria = new THREE.SphereGeometry(100, 30, 30); // Radius, number of width segment, number of height segment Only radius is required
 //        var terraMateriale = new THREE.MeshPhongMaterial(); // Reacts to lights
 //
@@ -163,7 +137,7 @@
 //        var terraMesh = new THREE.Mesh(sferaGeometria, terraMateriale);
 //
 //        scene.add( terraMesh );
-        scene.add( model );
+        scene.add(model);
 
 
         // Lights
@@ -193,10 +167,10 @@
 
         // Renderer
 
-        renderer = new THREE.WebGLRenderer( { antialias:true, alpha:true, logarithmicDepthBuffer: true  } );
-        renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        container.appendChild( renderer.domElement );
+        renderer = new THREE.WebGLRenderer({antialias: true, alpha: true, logarithmicDepthBuffer: true});
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
 
         // Stats
 
@@ -204,12 +178,9 @@
         stats.domElement.style.position = 'absolute';
         stats.domElement.style.top = '0px';
 
-        container.appendChild( stats.domElement );
+        container.appendChild(stats.domElement);
 
-        //
-        console.log(renderer);
-
-        window.addEventListener( 'resize', onWindowResize, false );
+        window.addEventListener('resize', onWindowResize, false);
 
         console.log('END init()')
 
@@ -220,7 +191,7 @@
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
 
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
     }
 
@@ -228,31 +199,33 @@
 
         console.log('BEGIN start()')
 
-        for ( var i = 0; i < kfAnimationsLength; ++i ) {
+        for (var i = 0; i < kfAnimationsLength; ++i) {
 
             var animation = kfAnimations[i];
 
-            for ( var h = 0, hl = animation.hierarchy.length; h < hl; h++ ) {
+            for (var h = 0, hl = animation.hierarchy.length; h < hl; h++) {
 
-                var keys = animation.data.hierarchy[ h ].keys;
-                var sids = animation.data.hierarchy[ h ].sids;
-                var obj = animation.hierarchy[ h ];
+                var keys = animation.data.hierarchy[h].keys;
+                var sids = animation.data.hierarchy[h].sids;
+                var obj = animation.hierarchy[h];
 
                 //console.log(animation.data);
 
-                if ( keys.length && sids ) {
+                if (keys.length && sids) {
 
-                    for ( var s = 0; s < sids.length; s++ ) {
+                    for (var s = 0; s < sids.length; s++) {
 
-                        var sid = sids[ s ];
-                        var next = animation.getNextKeyWith( sid, h, 0 );
+                        var sid = sids[s];
+                        var next = animation.getNextKeyWith(sid, h, 0);
+                        //var prev = animation.getPrevKeyWith(sid, h, 0);
 
-                        if ( next ) next.apply( sid );
+                        if (next) next.apply(sid);
+                        //if (prev) prev.apply(sid);
 
                     }
 
                     obj.matrixAutoUpdate = false;
-                    animation.data.hierarchy[ h ].node.updateMatrix();
+                    animation.data.hierarchy[h].node.updateMatrix();
                     obj.matrixWorldNeedsUpdate = true;
 
                 }
@@ -270,11 +243,10 @@
 
     }
 
-    function update( e ) {
+    function update(e) {
 
         //console.log(e)
 
-        
 
         //var frameTime = ( timestamp - lastTimestamp ) * 0.001;
 //
@@ -307,13 +279,13 @@
 
         auxTime = currentTime + e;
 
-        if (auxTime <= VIDEO_END & auxTime >= VIDEO_INIT){
+        if (auxTime <= VIDEO_END & auxTime >= VIDEO_INIT) {
 
             currentTime = auxTime;
 
             var cooD = e;
 
-            model.traverse(function(child) {
+            model.traverse(function (child) {
 
                 //console.log(child)
 
@@ -324,7 +296,7 @@
 //                camera.fov = 30;
 //                camera.castShadow = true;
                     var vector = new THREE.Vector3();
-                    vector.setFromMatrixPosition( model.matrixWorld );
+                    vector.setFromMatrixPosition(model.matrixWorld);
 
                     //camera.lookAt( vector );
                 }
@@ -337,11 +309,11 @@
             camera.near = 10;
             camera.updateProjectionMatrix();
 
-            for ( var i = 0; i < kfAnimationsLength; ++i ) {
+            for (var i = 0; i < kfAnimationsLength; ++i) {
 
 
                 //kfAnimations[ i ].update( animations[0].length - 0.01 );
-                kfAnimations[ i ].update( cooD );
+                kfAnimations[i].update(cooD);
 
 
             }
@@ -355,7 +327,7 @@
 
         //progress += frameTime;
 //        lastTimestamp = timestamp;
-        renderer.render( scene, camera );
+        renderer.render(scene, camera);
         stats.update();
         startAnimation()
 
@@ -384,33 +356,33 @@
         }
     }
 
-    var tempReq = function (){
+    var tempReq = function () {
 
         update(0);
         loop();
-    } ;
+    };
 
     /* Dani */
 
-    var wheelDistance = function(evt){
+    var wheelDistance = function (evt) {
         if (!evt) evt = event;
-        var w=evt.wheelDelta, d=evt.detail;
-        if (d){
-            if (w) return w/d/40*d>0?1:-1; // Opera
-            else return -d/3;              // Firefox;         TODO: do not /3 for OS X
-        } else return w/120;             // IE/Safari/Chrome TODO: /3 for Chrome OS X
+        var w = evt.wheelDelta, d = evt.detail;
+        if (d) {
+            if (w) return w / d / 40 * d > 0 ? 1 : -1; // Opera
+            else return -d / 3;              // Firefox;         TODO: do not /3 for OS X
+        } else return w / 120;             // IE/Safari/Chrome TODO: /3 for Chrome OS X
     };
 
-    var wheelDirection = function(evt){
+    var wheelDirection = function (evt) {
         if (!evt) evt = event;
-        return (evt.detail<0) ? 1 : (evt.wheelDelta>0) ? 1 : -1;
+        return (evt.detail < 0) ? 1 : (evt.wheelDelta > 0) ? 1 : -1;
     };
 
     var counter = 0;
 
     function handleScroll(evt) {
 
-        if(wheelDirection(evt) > 0 ){
+        if (wheelDirection(evt) > 0) {
 
             counter = counter + wheelDistance(evt);
         } else {
@@ -418,7 +390,7 @@
 
         }
 
-        update( wheelDirection(evt) * -0.25 )
+        update(wheelDirection(evt) * -0.25)
 
         //animate( counter )
 
@@ -426,20 +398,20 @@
 
     var Animation = {
 
-        init : function () {
+        init: function () {
 
             this.loadModel();
 
         },
 
-        bindEventListeners : function (){
+        bindEventListeners: function () {
 
             $('#test').momentus({
                 //u: 10,
                 //mass: 1000,
                 //wheelRatio: -1000,
                 //mouseRatio: 6,
-                onChange: function(coords){
+                onChange: function (coords) {
 
                     stopAnimation();
 
@@ -467,11 +439,11 @@
 
         },
 
-        loadModel : function () {
+        loadModel: function () {
 
             var self = this;
 
-            loader.load( modelPath, function ( collada ) {
+            loader.load(modelPath, function (collada) {
 
                 console.log(collada)
 
@@ -481,82 +453,68 @@
 
                 model.scale.x = model.scale.y = model.scale.z = 0.1; // 1/8 scale, modeled in cm
 
-
-
                 // Aggiungo Manualmente il canale alpha alle texture
 
                 var manager = new THREE.LoadingManager();
-                manager.onProgress = function ( item, loaded, total ) {
 
-                    console.log( item, loaded, total );
+                manager.onProgress = function (item, loaded, total) {
 
-                    console.log( (loaded / total * 100) + '% loaded' );
+                    console.log(item, loaded, total);
 
+                    console.log((loaded / total * 100) + '% loaded');
 
                 };
-
 
                 manager.onLoad = function () {
                     // All the texure are loaded
-                    console.log( 'all Loaded' );
+                    console.log('all Loaded');
                 };
 
-                var loader = new THREE.ImageLoader( manager );
+                var loader = new THREE.ImageLoader(manager);
 
-                var forbiddenNames = ['Light', 'Plane', 'Camera', 'chiesa'];
+                var forbiddenNames = ['Light', 'Plane', 'Camera'];
 
                 var children = collada.scene.children || [];
 
-                for (var i = 0 ; i < children.length; i ++)  {
+                for (var i = 0; i < children.length; i++) {
                     var name = children[i].name;
 
-                    if ($.inArray(name, forbiddenNames) < 0){
+                    if ($.inArray(name, forbiddenNames) < 0) {
 
                         loadAlpha(name);
 
                     }
                 }
-                self.bindEventListeners();
 
-                function loadAlpha(name){
+                function loadAlpha(name) {
 
-                    var file = 'collada/' + name + '_alpha.jpg';
+                    var file = 'collada/' + name + '_alpha.jpg',
+                            alpha = new THREE.Texture(),
+                            object = model.getObjectByName(name, true),
+                            material = object.children[0].material;
 
-                    loader.load( file, function ( image ) {
-                        console.log(image, file)
-                        var  texture = new THREE.Texture();
-                        texture.image = image;
-                        texture.needsUpdate = true;
+                    material.alphaMap = alpha;
+                    material.transparent = true;
+                    material.side = THREE.DoubleSide;
 
-                        var cerchio = model.getObjectByName(name,true);
-                        var cerchioMat = cerchio.children[0].material;
+                    loader.load(file, function (image) {
 
-                        console.log('------------------')
-                        console.log(texture)
-                        console.log(cerchioMat)
+                        alpha.image = image;
+                        alpha.needsUpdate = true;
 
-                        cerchioMat.alphaMap = texture;
-                        console.log(cerchioMat)
-                        cerchioMat.transparent = true;
-                        cerchioMat.side = THREE.DoubleSide;
-
-                    } );
+                    });
 
                 }
-
-
 
                 self.bindEventListeners();
 
                 init();
+
                 start();
 
-                update( lastTimestamp);
+                update(lastTimestamp);
 
-                //callback(model);
-
-
-            } );
+            });
 
         }
 
