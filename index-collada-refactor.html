@@ -66,7 +66,7 @@
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'collada/chiesa15.dae';
+    var modelPath = 'collada/ombrello_problemi.dae';
 
     function init() {
 
@@ -145,8 +145,8 @@
 //        pointLight = new THREE.PointLight( 0xffffff, 1);
 //        scene.add( pointLight );
 
-//        var light = new THREE.AmbientLight( 0x404040 ); // soft white light
-//        scene.add( light );
+        var light = new THREE.AmbientLight( 0xffffff ); // soft white light
+        scene.add( light );
 
 
 //        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
@@ -169,6 +169,7 @@
 
         renderer = new THREE.WebGLRenderer({antialias: true, alpha: true, logarithmicDepthBuffer: true});
         renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setClearColor( 0xff0000, 1);
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
 
@@ -445,14 +446,14 @@
 
             loader.load(modelPath, function (collada) {
 
-                console.log(collada)
+
 
                 model = collada.scene;
                 animations = collada.animations;
                 kfAnimationsLength = animations.length;
 
                 model.scale.x = model.scale.y = model.scale.z = 0.1; // 1/8 scale, modeled in cm
-
+                console.log(model.getObjectByName("ombrello_prova", true));
                 // Aggiungo Manualmente il canale alpha alle texture
 
                 var manager = new THREE.LoadingManager();
@@ -472,7 +473,7 @@
 
                 var loader = new THREE.ImageLoader(manager);
 
-                var forbiddenNames = ['Light', 'Plane', 'Camera'];
+                var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8'];
 
                 var children = collada.scene.children || [];
 
@@ -492,7 +493,7 @@
                             alpha = new THREE.Texture(),
                             object = model.getObjectByName(name, true),
                             material = object.children[0].material;
-
+                    console.log(material)
                     material.alphaMap = alpha;
                     material.transparent = true;
                     material.side = THREE.DoubleSide;
