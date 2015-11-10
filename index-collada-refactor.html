@@ -66,7 +66,7 @@
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'progetto/rdc_spirale.dae';
+    var modelPath = 'progetto/test-group3.dae';
 
     function init() {
 
@@ -170,6 +170,7 @@
         renderer = new THREE.WebGLRenderer({antialias: true, alpha: true, logarithmicDepthBuffer: true});
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setClearColor( 0xebebeb, 1);
+        //renderer.sortObjects = false;
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
 
@@ -275,7 +276,7 @@
         //console.log(scene)
 
         var VIDEO_INIT = 0,
-                VIDEO_END = 9.9,
+                VIDEO_END = 50,
                 auxTime;
 
         auxTime = currentTime + e;
@@ -423,7 +424,9 @@
                     //console.log('progress '+ progress);
                     //console.log('lastTimestamp '+ lastTimestamp);
 
-                    update(progress.toFixed(2) * 0.01);
+
+                    //Invert scroll direction
+                    update(progress.toFixed(2) * -0.01);
 
                     lastTimestamp = coords.y;
 
@@ -453,7 +456,7 @@
                 kfAnimationsLength = animations.length;
 
                 model.scale.x = model.scale.y = model.scale.z = 0.1; // 1/8 scale, modeled in cm
-                console.log(model.getObjectByName("ombrello_prova", true));
+
                 // Aggiungo Manualmente il canale alpha alle texture
 
                 var manager = new THREE.LoadingManager();
@@ -473,11 +476,13 @@
 
                 var loader = new THREE.ImageLoader(manager);
 
-                var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8'];
+                var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','gruppo'];
+
 
                 var children = collada.scene.children || [];
 
                 for (var i = 0; i < children.length; i++) {
+
                     var name = children[i].name;
 
                     if ($.inArray(name, forbiddenNames) < 0) {
@@ -493,9 +498,13 @@
                             alpha = new THREE.Texture(),
                             object = model.getObjectByName(name, true),
                             material = object.children[0].material;
-                    console.log(material)
+
+                    console.log(object)
+
+                    //object.renderOrder = 1
                     material.alphaMap = alpha;
                     material.transparent = true;
+                    //material.depthWrite = false;
                     material.side = THREE.DoubleSide;
 
                     loader.load(file, function (image) {
