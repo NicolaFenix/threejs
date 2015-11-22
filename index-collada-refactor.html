@@ -75,15 +75,14 @@
         var container = document.createElement('div');
         document.body.appendChild(container);
         container.id = 'wheel';
-
+        $( "#wheel" ).addClass( "sixteen-nine" );
         // Camera
 //        model.getObjectByName( 'Camera', true ).visible = true;
 //        console.log();
 
 
-        camera = new THREE.PerspectiveCamera(36, window.innerWidth / window.innerHeight, 0.01, 100000);
+        //camera = new THREE.PerspectiveCamera(36, window.innerWidth / window.innerHeight, 0.01, 100000);
         //camera.position.copy( model.getObjectByName('Camera',true).position );
-
 
         // Scene
 
@@ -190,7 +189,7 @@
 
     function onWindowResize() {
 
-        camera.aspect = window.innerWidth / window.innerHeight;
+        //camera.aspect = 1920 / 1080;
         camera.updateProjectionMatrix();
 
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -294,6 +293,7 @@
                 if (child instanceof THREE.PerspectiveCamera) {
 
                     camera = child;
+                    camera.setLens (35, 35 );
                     //camera.near = 0;
 //                camera.fov = 30;
 //                camera.castShadow = true;
@@ -307,7 +307,7 @@
             });
 
             camera.aspect = window.innerWidth / window.innerHeight;
-
+            //camera.setLens ( 36, 35 )
             camera.near = 10;
             camera.updateProjectionMatrix();
 
