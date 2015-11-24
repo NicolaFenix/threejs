@@ -66,7 +66,8 @@
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'ultimo/gruppoalpha.dae';
+    var modelPath = 'ultimo/gruppi-ultimate.dae';
+
 
     function init() {
 
@@ -484,6 +485,8 @@
 
                 function processArray( array ) {
 
+                    console.log('processArray' + array)
+
                     var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8'];
 
                     for (var i = 0; i < array.length; i++) {
@@ -494,7 +497,9 @@
 
                             var object = model.getObjectByName(name, true);
 
-                            if ( name === 'gruppo' ) {
+                            console.log()
+
+                            if ( name.indexOf('gruppo') > -1 ) {
 
                                 processArray(object.children || []);
 
@@ -509,6 +514,8 @@
                 }
 
                 function loadAlpha(name, object) {
+
+                    console.log('loadAlpha' + name)
 
                     var file = 'ultimo/' + name + '_alpha.jpg',
                             alpha = new THREE.Texture(),
