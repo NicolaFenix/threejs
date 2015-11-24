@@ -476,30 +476,45 @@
 
                 var loader = new THREE.ImageLoader(manager);
 
-                var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','gruppo'];
-
+                console.log(model);
 
                 var children = collada.scene.children || [];
 
-                for (var i = 0; i < children.length; i++) {
+                processArray(children);
 
-                    var name = children[i].name;
+                function processArray( array ) {
 
-                    if ($.inArray(name, forbiddenNames) < 0) {
+                    var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8'];
 
-                        loadAlpha(name);
+                    for (var i = 0; i < array.length; i++) {
 
+                        var name = array[i].name;
+
+                        if ($.inArray(name, forbiddenNames) < 0) {
+
+                            var object = model.getObjectByName(name, true);
+
+                            if ( name === 'gruppo' ) {
+
+                                processArray(object.children || []);
+
+                            } else {
+
+                                loadAlpha(name, object);
+                            }
+
+                        }
                     }
+
                 }
 
-                function loadAlpha(name) {
+                function loadAlpha(name, object) {
 
                     var file = 'ultimo/' + name + '_alpha.jpg',
                             alpha = new THREE.Texture(),
-                            object = model.getObjectByName(name, true),
                             material = object.children[0].material;
 
-                    console.log(object)
+                    console.log(123456789)
 
                     //object.renderOrder = 1
                     material.alphaMap = alpha;
