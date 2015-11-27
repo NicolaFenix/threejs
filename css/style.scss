@@ -1,5 +1,7 @@
 /* Three JS - Main Style */
 
+
+
 body, html, #container{
   height: 100%;
   width: 100%;
@@ -50,3 +52,25 @@ canvas {
 //  @include aspect-ratio(16, 9);
 //  overflow: hidden;
 //}
+
+body {
+  font-family: Monospace;
+  background-color: #000000;
+  margin: 0px;
+  overflow: hidden;
+}
+
+#info {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display: block;
+
+}
+
+a {
+  color: skyblue
+}
