@@ -22,7 +22,7 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'ultimo/venezia_specchio.dae';
+    var modelPath = 'ultimo/domenica5.dae';
 
 
     function init() {
@@ -103,7 +103,7 @@ $( document ).ready(function() {
 
         var light = new THREE.AmbientLight( 0xffffff ); // soft white light
         scene.add( light );
-
+   scene.fog = new THREE.FogExp2( 0xebebeb, 0.0002 );
 
     //        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
     //        var pianoMateriale = new THREE.MeshLambertMaterial({
@@ -232,7 +232,7 @@ $( document ).ready(function() {
         //console.log(scene)
 
         var VIDEO_INIT = 0,
-            VIDEO_END = 65,
+            VIDEO_END = 100,
             auxTime;
 
         auxTime = currentTime + e;
@@ -276,6 +276,7 @@ $( document ).ready(function() {
             camera.aspect = window.innerWidth / window.innerHeight;
             //camera.setLens ( 36, 35 )
             camera.near = 10;
+            camera.far = 10000;
             camera.updateProjectionMatrix();
 
             for (var i = 0; i < kfAnimationsLength; ++i) {
@@ -462,7 +463,8 @@ $( document ).ready(function() {
 
                     //console.log('processArray' + array)
 
-                    var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','mare','Null_Object'];
+                    var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','mare','triangolo1',
+                    'triangolo2','triangolo3','triangolo4','freccia','bastone'];
 
                     var transparent = ['mare'];
 
