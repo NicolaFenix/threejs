@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - collada</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .indicatore{
+            position: relative;
+            z-index: 999999;
+            color: white;
+            font-size: 35px;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="counter" class="indicatore" style="color: red"></div>
+<div id="check" class="indicatore"  style="color: blue"></div>
+<div id="azzera" class="indicatore"  style="color: green"></div>
+<div id="log" class="indicatore"  style="color: aqua"></div>
+
+<div id="canvas"></div>
+
+<!--<script src="js/jquery-1.11.3.min.js"></script>-->
+<script src="vr/three.js"></script>
+<!--<script src="js/ColladaLoader.js"></script>-->
+<!--<script src="js/Detector.js"></script>-->
+<!--<script src="js/stats.min.js"></script>-->
+<!--<script src="js/CanvasRenderer.js"></script>-->
+
+<script src="vr/Projector.js"></script>
+<script src="vr/StereoEffect.js"></script>
+<script src="vr/DeviceOrientationControls.js"></script>
+<script src="vr/OrbitControls.js"></script>
+<script src="js/katie.js"></script>
+
+
+
+
+</body>
+</html>
