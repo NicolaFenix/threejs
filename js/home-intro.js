@@ -465,7 +465,8 @@ $( document ).ready(function() {
                     //console.log('processArray' + array)
 
                     var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','mare','triangolo1',
-                    'triangolo2','triangolo3','triangolo4','freccia','bastone'];
+                    'triangolo2','triangolo3','triangolo4','freccia','bastone',' '];
+
 
                     var transparent = ['mare'];
 
