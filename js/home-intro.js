@@ -241,6 +241,7 @@ $( document ).ready(function() {
 
 
 
+
             currentTime = auxTime;
 
             var cooD = e;
