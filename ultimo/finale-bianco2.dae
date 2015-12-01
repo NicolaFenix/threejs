@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>CINEMA4D 11.514 COLLADA Exporter</authoring_tool>
         </contributor>
-        <created>2015-12-01T23:37:12Z</created>
-        <modified>2015-12-01T23:37:12Z</modified>
+        <created>2015-12-01T23:44:43Z</created>
+        <modified>2015-12-01T23:44:43Z</modified>
         <unit name="meter"/>
         <up_axis>Y_UP</up_axis>
     </asset>
@@ -36642,9 +36642,9 @@
         <visual_scene id="ID378">
             <node id="ID379" name="gruppo-ombrellone.1">
                 <translate sid="translate">0 -4346.09 71.8995</translate>
-                <rotate sid="rotateY">0 1 0 90</rotate>
-                <rotate sid="rotateX">1 0 0 48.7136</rotate>
-                <rotate sid="rotateZ">0 0 1 -270</rotate>
+                <rotate sid="rotateY">0 1 0 270</rotate>
+                <rotate sid="rotateX">1 0 0 -38.5454</rotate>
+                <rotate sid="rotateZ">0 0 1 -90</rotate>
                 <scale sid="scale">1 1 1</scale>
                 <node id="ID385" name="ombrellone">
                     <translate sid="translate">0 0 0</translate>
@@ -36793,7 +36793,7 @@
             </node>
             <node id="ID466" name="gruppo-ombrellotutto">
                 <translate sid="translate">0.179886 -3158.35 185.195</translate>
-                <rotate sid="rotateY">0 1 0 289.057</rotate>
+                <rotate sid="rotateY">0 1 0 298.725</rotate>
                 <rotate sid="rotateX">1 0 0 0</rotate>
                 <rotate sid="rotateZ">0 0 1 0</rotate>
                 <scale sid="scale">1 1 1</scale>
@@ -36805,9 +36805,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID473" name="gruppo-ombrello4">
                         <translate sid="translate">1.14441e-005 -9.34601e-005 -6.29425e-005</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID479" name="bastone">
                             <translate sid="translate">0.0116081 -24.9531 0.0304813</translate>
@@ -36957,7 +36957,7 @@
                 </node>
                 <node id="ID560" name="gruppo-ombrello9">
                     <translate sid="translate">-786.332 -263.582 1316.78</translate>
-                    <rotate sid="rotateY">0 1 0 4.38955e-006</rotate>
+                    <rotate sid="rotateY">0 1 0 319.91</rotate>
                     <rotate sid="rotateX">1 0 0 34.4262</rotate>
                     <rotate sid="rotateZ">0 0 1 -313.345</rotate>
                     <scale sid="scale">1 1 1</scale>
@@ -37114,9 +37114,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID648" name="gruppo-ombrello7">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID654" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -37272,9 +37272,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID736" name="gruppo-ombrello8">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID742" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -37430,9 +37430,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID824" name="gruppo-ombrello7">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID830" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -37588,9 +37588,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID912" name="gruppo-ombrello6">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID918" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -37746,9 +37746,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1000" name="gruppo-ombrello1">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1006" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -37904,9 +37904,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1088" name="gruppo-ombrello2">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1094" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -38062,9 +38062,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1176" name="gruppo-ombrello4">
                         <translate sid="translate">1.14441e-005 -9.34601e-005 -6.29425e-005</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1182" name="bastone">
                             <translate sid="translate">0.0116081 -24.9531 0.0304813</translate>
@@ -38220,9 +38220,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1264" name="gruppo-ombrello5">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1270" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -38378,9 +38378,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1352" name="gruppo-ombrello7">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1358" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -38536,9 +38536,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1440" name="gruppo-ombrello8">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1446" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -38694,9 +38694,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1528" name="gruppo-ombrello7">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1534" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -38852,9 +38852,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1616" name="gruppo-ombrello6">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1622" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -39010,9 +39010,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1704" name="gruppo-ombrello1">
                         <translate sid="translate">18.2853 -5.54608 18.476</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1710" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -39168,9 +39168,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1792" name="gruppo-ombrello2">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1798" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -39326,9 +39326,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1880" name="gruppo-ombrello3">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1886" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -39484,9 +39484,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID1968" name="gruppo-ombrello4">
                         <translate sid="translate">1.14441e-005 -9.34601e-005 -6.29425e-005</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID1974" name="bastone">
                             <translate sid="translate">0.0116081 -24.9531 0.0304813</translate>
@@ -39642,9 +39642,9 @@
                     <scale sid="scale">1 1 1</scale>
                     <node id="ID2056" name="gruppo-ombrello5">
                         <translate sid="translate">0 0 0</translate>
-                        <rotate sid="rotateY">0 1 0 323.057</rotate>
+                        <rotate sid="rotateY">0 1 0 51.798</rotate>
                         <rotate sid="rotateX">1 0 0 0</rotate>
-                        <rotate sid="rotateZ">0 0 1 0</rotate>
+                        <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
                         <scale sid="scale">1 1 1</scale>
                         <node id="ID2062" name="bastone">
                             <translate sid="translate">0.0275072 -58.9214 0.0718812</translate>
@@ -39826,7 +39826,7 @@
                 </instance_geometry>
             </node>
             <node id="ID2161" name="gruppo-camera">
-                <translate sid="translate">5.13439e-008 -2320.61 155</translate>
+                <translate sid="translate">5.13439e-008 -4842.96 155</translate>
                 <rotate sid="rotateY">0 1 0 360</rotate>
                 <rotate sid="rotateX">1 0 0 1.8783e-005</rotate>
                 <rotate sid="rotateZ">0 0 1 0</rotate>
@@ -39880,7 +39880,7 @@
                     </instance_geometry>
                 </node>
                 <node id="ID2234" name="gruppo-venezia">
-                    <translate sid="translate">7018.41 129.808 -1300.78</translate>
+                    <translate sid="translate">896.561 129.808 -1300.78</translate>
                     <rotate sid="rotateY">0 1 0 5.45788e-008</rotate>
                     <rotate sid="rotateX">1 0 0 -3</rotate>
                     <rotate sid="rotateZ">0 0 1 -360</rotate>
@@ -43999,9 +43999,9 @@
             </node>
             <node id="ID4471" name="gruppo-ombrellone">
                 <translate sid="translate">0 -3733.09 71.8995</translate>
-                <rotate sid="rotateY">0 1 0 90</rotate>
-                <rotate sid="rotateX">1 0 0 48.7136</rotate>
-                <rotate sid="rotateZ">0 0 1 -270</rotate>
+                <rotate sid="rotateY">0 1 0 270</rotate>
+                <rotate sid="rotateX">1 0 0 -38.5454</rotate>
+                <rotate sid="rotateZ">0 0 1 -90</rotate>
                 <scale sid="scale">1 1 1</scale>
                 <node id="ID4477" name="ombrellone">
                     <translate sid="translate">0 0 0</translate>
@@ -44152,7 +44152,7 @@
                 <translate sid="translate">147.781 -2886.38 -57.912</translate>
                 <rotate sid="rotateY">0 1 0 0</rotate>
                 <rotate sid="rotateX">1 0 0 -0.745655</rotate>
-                <rotate sid="rotateZ">0 0 1 0</rotate>
+                <rotate sid="rotateZ">0 0 1 -232.743</rotate>
                 <scale sid="scale">1 1 1</scale>
                 <node id="ID4564" name="borsa_fianco_01">
                     <translate sid="translate">-21.4484 -18.28 -7.02938</translate>
@@ -44338,7 +44338,7 @@
                     </instance_geometry>
                 </node>
                 <node id="ID4664" name="tessuto_03">
-                    <translate sid="translate">67.5017 -26.8276 -3.6595</translate>
+                    <translate sid="translate">-98.4468 -26.8276 -3.6595</translate>
                     <rotate sid="rotateY">0 1 0 0</rotate>
                     <rotate sid="rotateX">1 0 0 -90</rotate>
                     <rotate sid="rotateZ">0 0 1 -180</rotate>
@@ -44390,7 +44390,7 @@
                 <translate sid="translate">143.159 -2677.3 -80.9618</translate>
                 <rotate sid="rotateY">0 1 0 0</rotate>
                 <rotate sid="rotateX">1 0 0 0</rotate>
-                <rotate sid="rotateZ">0 0 1 0</rotate>
+                <rotate sid="rotateZ">0 0 1 -2.18796</rotate>
                 <scale sid="scale">1 1 1</scale>
                 <node id="ID4712" name="borsina_02">
                     <translate sid="translate">0 13 7.62939e-005</translate>
@@ -44544,7 +44544,7 @@
                 <rotate sid="rotateZ">0 0 1 0</rotate>
                 <scale sid="scale">1 1 1</scale>
                 <node id="ID4794" name="tessuto_01">
-                    <translate sid="translate">56.6944 -13.5933 -4.2462</translate>
+                    <translate sid="translate">-118.993 -13.5933 -4.2462</translate>
                     <rotate sid="rotateY">0 1 0 0</rotate>
                     <rotate sid="rotateX">1 0 0 90</rotate>
                     <rotate sid="rotateZ">0 0 1 0</rotate>
@@ -45357,7 +45357,7 @@
                     </bind_material>
                 </instance_geometry>
             </node>
-            <node id="ID5234" name="bianco.2">
+            <node id="ID5234" name="bianco">
                 <translate sid="translate">-30.0627 -981.359 -613.196</translate>
                 <rotate sid="rotateY">0 1 0 5.32965</rotate>
                 <rotate sid="rotateX">1 0 0 57.7097</rotate>
