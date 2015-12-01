@@ -4,8 +4,8 @@
         <contributor>
             <authoring_tool>CINEMA4D 11.514 COLLADA Exporter</authoring_tool>
         </contributor>
-        <created>2015-12-01T23:19:30Z</created>
-        <modified>2015-12-01T23:19:30Z</modified>
+        <created>2015-12-01T23:37:12Z</created>
+        <modified>2015-12-01T23:37:12Z</modified>
         <unit name="meter"/>
         <up_axis>Y_UP</up_axis>
     </asset>
@@ -39793,7 +39793,7 @@
                     </node>
                 </node>
             </node>
-            <node id="ID2143" name="bianco.4">
+            <node id="ID2143" name="bianco">
                 <translate sid="translate">-83.4143 -2943.7 -169.296</translate>
                 <rotate sid="rotateY">0 1 0 270</rotate>
                 <rotate sid="rotateX">1 0 0 -89.6116</rotate>
@@ -39809,7 +39809,7 @@
                     </bind_material>
                 </instance_geometry>
             </node>
-            <node id="ID2152" name="nero.2">
+            <node id="ID2152" name="nero">
                 <translate sid="translate">-0.829651 -4050.89 23.4303</translate>
                 <rotate sid="rotateY">0 1 0 0</rotate>
                 <rotate sid="rotateX">1 0 0 90</rotate>
@@ -39826,7 +39826,7 @@
                 </instance_geometry>
             </node>
             <node id="ID2161" name="gruppo-camera">
-                <translate sid="translate">5.13439e-008 -1985.93 155</translate>
+                <translate sid="translate">5.13439e-008 -2320.61 155</translate>
                 <rotate sid="rotateY">0 1 0 360</rotate>
                 <rotate sid="rotateX">1 0 0 1.8783e-005</rotate>
                 <rotate sid="rotateZ">0 0 1 0</rotate>
@@ -39880,7 +39880,7 @@
                     </instance_geometry>
                 </node>
                 <node id="ID2234" name="gruppo-venezia">
-                    <translate sid="translate">7830.7 129.808 -1300.78</translate>
+                    <translate sid="translate">7018.41 129.808 -1300.78</translate>
                     <rotate sid="rotateY">0 1 0 5.45788e-008</rotate>
                     <rotate sid="rotateX">1 0 0 -3</rotate>
                     <rotate sid="rotateZ">0 0 1 -360</rotate>
@@ -40643,7 +40643,7 @@
                             </bind_material>
                         </instance_geometry>
                     </node>
-                    <node id="ID2637" name="capella_paesaggio.3">
+                    <node id="ID2637" name="capella_paesaggio">
                         <translate sid="translate">943.112 -237.787 -2682.4</translate>
                         <rotate sid="rotateY">0 1 0 0</rotate>
                         <rotate sid="rotateX">1 0 0 90</rotate>
@@ -40659,7 +40659,7 @@
                             </bind_material>
                         </instance_geometry>
                     </node>
-                    <node id="ID2646" name="capella_paesaggio.2">
+                    <node id="ID2646" name="capella_paesaggio">
                         <translate sid="translate">943.112 203.996 -2682.4</translate>
                         <rotate sid="rotateY">0 1 0 0</rotate>
                         <rotate sid="rotateX">1 0 0 90</rotate>
@@ -44766,7 +44766,7 @@
                     </bind_material>
                 </instance_geometry>
             </node>
-            <node id="ID4928" name="cinturone.1">
+            <node id="ID4928" name="cinturone">
                 <translate sid="translate">21.7249 -2058.42 30.3172</translate>
                 <rotate sid="rotateY">0 1 0 171.269</rotate>
                 <rotate sid="rotateX">1 0 0 -76.1542</rotate>
@@ -45696,7 +45696,7 @@
                     </instance_geometry>
                 </node>
             </node>
-            <node id="ID5410" name="bianco.1">
+            <node id="ID5410" name="bianco">
                 <translate sid="translate">167.287 -2511.93 -309.364</translate>
                 <rotate sid="rotateY">0 1 0 270</rotate>
                 <rotate sid="rotateX">1 0 0 -81.6408</rotate>
@@ -46825,7 +46825,7 @@
                 <rotate sid="rotateX">1 0 0 0</rotate>
                 <rotate sid="rotateZ">0 0 1 0</rotate>
                 <scale sid="scale">1 1 1</scale>
-                <node id="ID6028" name="pattern_01.63">
+                <node id="ID6028" name="pattern_01">
                     <translate sid="translate">49.1541 57.5446 133.93</translate>
                     <rotate sid="rotateY">0 1 0 66.5228</rotate>
                     <rotate sid="rotateX">1 0 0 74.9035</rotate>
@@ -46841,7 +46841,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6037" name="pattern_01.62">
+                <node id="ID6037" name="pattern_01">
                     <translate sid="translate">66.7755 59.0161 122.183</translate>
                     <rotate sid="rotateY">0 1 0 86.1758</rotate>
                     <rotate sid="rotateX">1 0 0 88.7226</rotate>
@@ -46857,7 +46857,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6046" name="pattern_01.61">
+                <node id="ID6046" name="pattern_01">
                     <translate sid="translate">84.3703 57.631 110.398</translate>
                     <rotate sid="rotateY">0 1 0 242.732</rotate>
                     <rotate sid="rotateX">1 0 0 77.281</rotate>
@@ -46873,7 +46873,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6055" name="pattern_01.60">
+                <node id="ID6055" name="pattern_01">
                     <translate sid="translate">101.275 53.4963 98.2634</translate>
                     <rotate sid="rotateY">0 1 0 243.867</rotate>
                     <rotate sid="rotateX">1 0 0 63.3857</rotate>
@@ -46889,7 +46889,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6064" name="pattern_01.59">
+                <node id="ID6064" name="pattern_01">
                     <translate sid="translate">116.871 46.9028 85.4912</translate>
                     <rotate sid="rotateY">0 1 0 244.251</rotate>
                     <rotate sid="rotateX">1 0 0 49.4872</rotate>
@@ -46905,7 +46905,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6073" name="pattern_01.58">
+                <node id="ID6073" name="pattern_01">
                     <translate sid="translate">130.631 38.3073 71.8365</translate>
                     <rotate sid="rotateY">0 1 0 244.463</rotate>
                     <rotate sid="rotateX">1 0 0 35.5882</rotate>
@@ -46921,7 +46921,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6082" name="pattern_01.57">
+                <node id="ID6082" name="pattern_01">
                     <translate sid="translate">142.148 28.3013 57.1134</translate>
                     <rotate sid="rotateY">0 1 0 244.611</rotate>
                     <rotate sid="rotateX">1 0 0 21.6888</rotate>
@@ -46937,7 +46937,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6091" name="pattern_01.56">
+                <node id="ID6091" name="pattern_01">
                     <translate sid="translate">151.167 17.571 41.2083</translate>
                     <rotate sid="rotateY">0 1 0 244.732</rotate>
                     <rotate sid="rotateX">1 0 0 7.78925</rotate>
@@ -46953,7 +46953,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6100" name="pattern_01.55">
+                <node id="ID6100" name="pattern_01">
                     <translate sid="translate">157.601 6.85089 24.0868</translate>
                     <rotate sid="rotateY">0 1 0 244.846</rotate>
                     <rotate sid="rotateX">1 0 0 -6.11033</rotate>
@@ -46969,7 +46969,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6109" name="pattern_01.54">
+                <node id="ID6109" name="pattern_01">
                     <translate sid="translate">161.537 -3.12445 5.79623</translate>
                     <rotate sid="rotateY">0 1 0 244.966</rotate>
                     <rotate sid="rotateX">1 0 0 -20.0099</rotate>
@@ -46985,7 +46985,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6118" name="pattern_01.53">
+                <node id="ID6118" name="pattern_01">
                     <translate sid="translate">163.23 -11.6711 -13.5372</translate>
                     <rotate sid="rotateY">0 1 0 245.109</rotate>
                     <rotate sid="rotateX">1 0 0 -33.9093</rotate>
@@ -47001,7 +47001,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6127" name="pattern_01.52">
+                <node id="ID6127" name="pattern_01">
                     <translate sid="translate">163.086 -18.2006 -33.7174</translate>
                     <rotate sid="rotateY">0 1 0 245.31</rotate>
                     <rotate sid="rotateX">1 0 0 -47.8084</rotate>
@@ -47017,7 +47017,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6136" name="pattern_01.51">
+                <node id="ID6136" name="pattern_01">
                     <translate sid="translate">161.633 -22.261 -54.4912</translate>
                     <rotate sid="rotateY">0 1 0 245.662</rotate>
                     <rotate sid="rotateX">1 0 0 -61.7068</rotate>
@@ -47033,7 +47033,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6145" name="pattern_01.50">
+                <node id="ID6145" name="pattern_01">
                     <translate sid="translate">159.489 -23.5659 -75.5655</translate>
                     <rotate sid="rotateY">0 1 0 246.611</rotate>
                     <rotate sid="rotateX">1 0 0 -75.603</rotate>
@@ -47049,7 +47049,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6154" name="pattern_01.49">
+                <node id="ID6154" name="pattern_01">
                     <translate sid="translate">157.318 -22.0141 -96.627</translate>
                     <rotate sid="rotateY">0 1 0 288.374</rotate>
                     <rotate sid="rotateX">1 0 0 -89.3242</rotate>
@@ -47065,7 +47065,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6163" name="pattern_01.48">
+                <node id="ID6163" name="pattern_01">
                     <translate sid="translate">155.784 -17.6966 -117.363</translate>
                     <rotate sid="rotateY">0 1 0 62.843</rotate>
                     <rotate sid="rotateX">1 0 0 -76.5816</rotate>
@@ -47081,7 +47081,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6172" name="pattern_01.47">
+                <node id="ID6172" name="pattern_01">
                     <translate sid="translate">155.511 -10.8907 -137.484</translate>
                     <rotate sid="rotateY">0 1 0 63.8939</rotate>
                     <rotate sid="rotateX">1 0 0 -62.6859</rotate>
@@ -47097,7 +47097,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6181" name="pattern_01.46">
+                <node id="ID6181" name="pattern_01">
                     <translate sid="translate">157.037 -2.04047 -156.74</translate>
                     <rotate sid="rotateY">0 1 0 64.2641</rotate>
                     <rotate sid="rotateX">1 0 0 -48.7874</rotate>
@@ -47113,7 +47113,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6190" name="pattern_01.45">
+                <node id="ID6190" name="pattern_01">
                     <translate sid="translate">160.778 8.27203 -174.94</translate>
                     <rotate sid="rotateY">0 1 0 64.4713</rotate>
                     <rotate sid="rotateX">1 0 0 -34.8883</rotate>
@@ -47129,7 +47129,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6199" name="pattern_01.44">
+                <node id="ID6199" name="pattern_01">
                     <translate sid="translate">167.003 19.3666 -191.964</translate>
                     <rotate sid="rotateY">0 1 0 64.6174</rotate>
                     <rotate sid="rotateX">1 0 0 -20.9888</rotate>
@@ -47145,7 +47145,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6208" name="pattern_01.42">
+                <node id="ID6208" name="pattern_01">
                     <translate sid="translate">11.9718 -1.2099 164.142</translate>
                     <rotate sid="rotateY">0 1 0 79.3072</rotate>
                     <rotate sid="rotateX">1 0 0 55.9993</rotate>
@@ -47161,7 +47161,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6217" name="pattern_01.41">
+                <node id="ID6217" name="pattern_01">
                     <translate sid="translate">28.0736 6.09857 152.395</translate>
                     <rotate sid="rotateY">0 1 0 89.7614</rotate>
                     <rotate sid="rotateX">1 0 0 69.0856</rotate>
@@ -47177,7 +47177,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6226" name="pattern_01.40">
+                <node id="ID6226" name="pattern_01">
                     <translate sid="translate">45.1101 10.7079 140.61</translate>
                     <rotate sid="rotateY">0 1 0 125.097</rotate>
                     <rotate sid="rotateX">1 0 0 79.8959</rotate>
@@ -47193,7 +47193,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6235" name="pattern_01.39">
+                <node id="ID6235" name="pattern_01">
                     <translate sid="translate">62.4209 12.4953 128.476</translate>
                     <rotate sid="rotateY">0 1 0 201.643</rotate>
                     <rotate sid="rotateX">1 0 0 77.7436</rotate>
@@ -47209,7 +47209,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6244" name="pattern_01.38">
+                <node id="ID6244" name="pattern_01">
                     <translate sid="translate">79.3262 11.5274 115.704</translate>
                     <rotate sid="rotateY">0 1 0 226.322</rotate>
                     <rotate sid="rotateX">1 0 0 65.88</rotate>
@@ -47225,7 +47225,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6253" name="pattern_01.37">
+                <node id="ID6253" name="pattern_01">
                     <translate sid="translate">95.1745 8.05682 102.049</translate>
                     <rotate sid="rotateY">0 1 0 234.719</rotate>
                     <rotate sid="rotateX">1 0 0 52.6292</rotate>
@@ -47241,7 +47241,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6262" name="pattern_01.36">
+                <node id="ID6262" name="pattern_01">
                     <translate sid="translate">109.384 2.50348 87.3258</translate>
                     <rotate sid="rotateY">0 1 0 239.127</rotate>
                     <rotate sid="rotateX">1 0 0 39.0656</rotate>
@@ -47257,7 +47257,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6271" name="pattern_01.35">
+                <node id="ID6271" name="pattern_01">
                     <translate sid="translate">121.485 -4.57123 71.4207</translate>
                     <rotate sid="rotateY">0 1 0 242.087</rotate>
                     <rotate sid="rotateX">1 0 0 25.3906</rotate>
@@ -47273,7 +47273,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6280" name="pattern_01.34">
+                <node id="ID6280" name="pattern_01">
                     <translate sid="translate">131.148 -12.5051 54.2991</translate>
                     <rotate sid="rotateY">0 1 0 244.434</rotate>
                     <rotate sid="rotateX">1 0 0 11.6686</rotate>
@@ -47289,7 +47289,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6289" name="pattern_01.33">
+                <node id="ID6289" name="pattern_01">
                     <translate sid="translate">138.208 -20.5771 36.0086</translate>
                     <rotate sid="rotateY">0 1 0 246.555</rotate>
                     <rotate sid="rotateX">1 0 0 -2.07055</rotate>
@@ -47305,7 +47305,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6298" name="pattern_01.32">
+                <node id="ID6298" name="pattern_01">
                     <translate sid="translate">142.675 -28.0572 16.6751</translate>
                     <rotate sid="rotateY">0 1 0 248.713</rotate>
                     <rotate sid="rotateX">1 0 0 -15.8069</rotate>
@@ -47321,7 +47321,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6307" name="pattern_01.31">
+                <node id="ID6307" name="pattern_01">
                     <translate sid="translate">144.734 -34.2556 -3.50507</translate>
                     <rotate sid="rotateY">0 1 0 251.193</rotate>
                     <rotate sid="rotateX">1 0 0 -29.5186</rotate>
@@ -47337,7 +47337,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6316" name="pattern_01.30">
+                <node id="ID6316" name="pattern_01">
                     <translate sid="translate">144.73 -38.5681 -24.2789</translate>
                     <rotate sid="rotateY">0 1 0 254.465</rotate>
                     <rotate sid="rotateX">1 0 0 -43.1696</rotate>
@@ -47353,7 +47353,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6325" name="pattern_01.29">
+                <node id="ID6325" name="pattern_01">
                     <translate sid="translate">143.149 -40.5176 -45.3532</translate>
                     <rotate sid="rotateY">0 1 0 259.651</rotate>
                     <rotate sid="rotateX">1 0 0 -56.6728</rotate>
@@ -47369,7 +47369,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6334" name="pattern_01.28">
+                <node id="ID6334" name="pattern_01">
                     <translate sid="translate">140.582 -39.7858 -66.4147</translate>
                     <rotate sid="rotateY">0 1 0 270.614</rotate>
                     <rotate sid="rotateX">1 0 0 -69.718</rotate>
@@ -47385,7 +47385,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6343" name="pattern_01.27">
+                <node id="ID6343" name="pattern_01">
                     <translate sid="translate">137.687 -36.235 -87.1511</translate>
                     <rotate sid="rotateY">0 1 0 308.646</rotate>
                     <rotate sid="rotateX">1 0 0 -80.2353</rotate>
@@ -47401,7 +47401,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6352" name="pattern_01.26">
+                <node id="ID6352" name="pattern_01">
                     <translate sid="translate">135.143 -29.9167 -107.272</translate>
                     <rotate sid="rotateY">0 1 0 23.8944</rotate>
                     <rotate sid="rotateX">1 0 0 -77.2413</rotate>
@@ -47417,7 +47417,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6361" name="pattern_01.25">
+                <node id="ID6361" name="pattern_01">
                     <translate sid="translate">133.605 -21.0688 -126.528</translate>
                     <rotate sid="rotateY">0 1 0 46.9384</rotate>
                     <rotate sid="rotateX">1 0 0 -65.2283</rotate>
@@ -47433,7 +47433,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6370" name="pattern_01.24">
+                <node id="ID6370" name="pattern_01">
                     <translate sid="translate">133.663 -10.0988 -144.728</translate>
                     <rotate sid="rotateY">0 1 0 55.0011</rotate>
                     <rotate sid="rotateX">1 0 0 -51.9509</rotate>
@@ -47449,7 +47449,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6379" name="pattern_01.23">
+                <node id="ID6379" name="pattern_01">
                     <translate sid="translate">135.796 2.44232 -161.752</translate>
                     <rotate sid="rotateY">0 1 0 59.3005</rotate>
                     <rotate sid="rotateX">1 0 0 -38.3788</rotate>
@@ -47465,7 +47465,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6388" name="pattern_01.63">
+                <node id="ID6388" name="pattern_01">
                     <translate sid="translate">-49.154 57.6318 133.93</translate>
                     <rotate sid="rotateY">0 1 0 113.477</rotate>
                     <rotate sid="rotateX">1 0 0 -74.9035</rotate>
@@ -47481,7 +47481,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6397" name="pattern_01.62">
+                <node id="ID6397" name="pattern_01">
                     <translate sid="translate">-66.7755 59.1032 122.183</translate>
                     <rotate sid="rotateY">0 1 0 93.8242</rotate>
                     <rotate sid="rotateX">1 0 0 -88.7226</rotate>
@@ -47497,7 +47497,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6406" name="pattern_01.61">
+                <node id="ID6406" name="pattern_01">
                     <translate sid="translate">-84.3703 57.7182 110.398</translate>
                     <rotate sid="rotateY">0 1 0 297.268</rotate>
                     <rotate sid="rotateX">1 0 0 -77.281</rotate>
@@ -47513,7 +47513,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6415" name="pattern_01.60">
+                <node id="ID6415" name="pattern_01">
                     <translate sid="translate">-101.275 53.5834 98.2634</translate>
                     <rotate sid="rotateY">0 1 0 296.133</rotate>
                     <rotate sid="rotateX">1 0 0 -63.3857</rotate>
@@ -47529,7 +47529,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6424" name="pattern_01.59">
+                <node id="ID6424" name="pattern_01">
                     <translate sid="translate">-116.871 46.9899 85.4912</translate>
                     <rotate sid="rotateY">0 1 0 295.749</rotate>
                     <rotate sid="rotateX">1 0 0 -49.4872</rotate>
@@ -47545,7 +47545,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6433" name="pattern_01.58">
+                <node id="ID6433" name="pattern_01">
                     <translate sid="translate">-130.631 38.3945 71.8365</translate>
                     <rotate sid="rotateY">0 1 0 295.537</rotate>
                     <rotate sid="rotateX">1 0 0 -35.5882</rotate>
@@ -47561,7 +47561,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6442" name="pattern_01.57">
+                <node id="ID6442" name="pattern_01">
                     <translate sid="translate">-142.148 28.3885 57.1134</translate>
                     <rotate sid="rotateY">0 1 0 295.389</rotate>
                     <rotate sid="rotateX">1 0 0 -21.6888</rotate>
@@ -47577,7 +47577,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6451" name="pattern_01.56">
+                <node id="ID6451" name="pattern_01">
                     <translate sid="translate">-151.167 17.6581 41.2083</translate>
                     <rotate sid="rotateY">0 1 0 295.268</rotate>
                     <rotate sid="rotateX">1 0 0 -7.78925</rotate>
@@ -47593,7 +47593,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6460" name="pattern_01.55">
+                <node id="ID6460" name="pattern_01">
                     <translate sid="translate">-157.601 6.93805 24.0868</translate>
                     <rotate sid="rotateY">0 1 0 295.154</rotate>
                     <rotate sid="rotateX">1 0 0 6.11033</rotate>
@@ -47609,7 +47609,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6469" name="pattern_01.54">
+                <node id="ID6469" name="pattern_01">
                     <translate sid="translate">-161.537 -3.03729 5.79623</translate>
                     <rotate sid="rotateY">0 1 0 295.034</rotate>
                     <rotate sid="rotateX">1 0 0 20.0099</rotate>
@@ -47625,7 +47625,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6478" name="pattern_01.53">
+                <node id="ID6478" name="pattern_01">
                     <translate sid="translate">-163.23 -11.5838 -13.5372</translate>
                     <rotate sid="rotateY">0 1 0 294.891</rotate>
                     <rotate sid="rotateX">1 0 0 33.9093</rotate>
@@ -47641,7 +47641,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6487" name="pattern_01.52">
+                <node id="ID6487" name="pattern_01">
                     <translate sid="translate">-163.086 -18.1135 -33.7174</translate>
                     <rotate sid="rotateY">0 1 0 294.69</rotate>
                     <rotate sid="rotateX">1 0 0 47.8084</rotate>
@@ -47657,7 +47657,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6496" name="pattern_01.51">
+                <node id="ID6496" name="pattern_01">
                     <translate sid="translate">-161.633 -22.1739 -54.4912</translate>
                     <rotate sid="rotateY">0 1 0 294.338</rotate>
                     <rotate sid="rotateX">1 0 0 61.7068</rotate>
@@ -47673,7 +47673,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6505" name="pattern_01.50">
+                <node id="ID6505" name="pattern_01">
                     <translate sid="translate">-159.489 -23.4788 -75.5655</translate>
                     <rotate sid="rotateY">0 1 0 293.389</rotate>
                     <rotate sid="rotateX">1 0 0 75.603</rotate>
@@ -47689,7 +47689,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6514" name="pattern_01.49">
+                <node id="ID6514" name="pattern_01">
                     <translate sid="translate">-157.317 -21.9269 -96.627</translate>
                     <rotate sid="rotateY">0 1 0 251.626</rotate>
                     <rotate sid="rotateX">1 0 0 89.3242</rotate>
@@ -47705,7 +47705,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6523" name="pattern_01.48">
+                <node id="ID6523" name="pattern_01">
                     <translate sid="translate">-155.784 -17.6094 -117.363</translate>
                     <rotate sid="rotateY">0 1 0 117.157</rotate>
                     <rotate sid="rotateX">1 0 0 76.5816</rotate>
@@ -47721,7 +47721,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6532" name="pattern_01.47">
+                <node id="ID6532" name="pattern_01">
                     <translate sid="translate">-155.511 -10.8035 -137.484</translate>
                     <rotate sid="rotateY">0 1 0 116.106</rotate>
                     <rotate sid="rotateX">1 0 0 62.6859</rotate>
@@ -47737,7 +47737,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6541" name="pattern_01.46">
+                <node id="ID6541" name="pattern_01">
                     <translate sid="translate">-157.037 -1.95331 -156.74</translate>
                     <rotate sid="rotateY">0 1 0 115.736</rotate>
                     <rotate sid="rotateX">1 0 0 48.7874</rotate>
@@ -47753,7 +47753,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6550" name="pattern_01.45">
+                <node id="ID6550" name="pattern_01">
                     <translate sid="translate">-160.778 8.35919 -174.94</translate>
                     <rotate sid="rotateY">0 1 0 115.529</rotate>
                     <rotate sid="rotateX">1 0 0 34.8883</rotate>
@@ -47769,7 +47769,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6559" name="pattern_01.44">
+                <node id="ID6559" name="pattern_01">
                     <translate sid="translate">-167.003 19.4538 -191.964</translate>
                     <rotate sid="rotateY">0 1 0 115.383</rotate>
                     <rotate sid="rotateX">1 0 0 20.9888</rotate>
@@ -47785,7 +47785,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6568" name="pattern_01.42">
+                <node id="ID6568" name="pattern_01">
                     <translate sid="translate">-11.9719 -1.12274 164.142</translate>
                     <rotate sid="rotateY">0 1 0 100.693</rotate>
                     <rotate sid="rotateX">1 0 0 -55.9993</rotate>
@@ -47801,7 +47801,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6577" name="pattern_01.41">
+                <node id="ID6577" name="pattern_01">
                     <translate sid="translate">-28.0736 6.18585 152.395</translate>
                     <rotate sid="rotateY">0 1 0 90.2386</rotate>
                     <rotate sid="rotateX">1 0 0 -69.0856</rotate>
@@ -47817,7 +47817,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6586" name="pattern_01.40">
+                <node id="ID6586" name="pattern_01">
                     <translate sid="translate">-45.1102 10.7951 140.61</translate>
                     <rotate sid="rotateY">0 1 0 54.9028</rotate>
                     <rotate sid="rotateX">1 0 0 -79.8959</rotate>
@@ -47833,7 +47833,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6595" name="pattern_01.39">
+                <node id="ID6595" name="pattern_01">
                     <translate sid="translate">-62.421 12.5825 128.476</translate>
                     <rotate sid="rotateY">0 1 0 338.357</rotate>
                     <rotate sid="rotateX">1 0 0 -77.7436</rotate>
@@ -47849,7 +47849,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6604" name="pattern_01.38">
+                <node id="ID6604" name="pattern_01">
                     <translate sid="translate">-79.3262 11.6146 115.704</translate>
                     <rotate sid="rotateY">0 1 0 313.678</rotate>
                     <rotate sid="rotateX">1 0 0 -65.88</rotate>
@@ -47865,7 +47865,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6613" name="pattern_01.37">
+                <node id="ID6613" name="pattern_01">
                     <translate sid="translate">-95.1744 8.14398 102.049</translate>
                     <rotate sid="rotateY">0 1 0 305.281</rotate>
                     <rotate sid="rotateX">1 0 0 -52.6292</rotate>
@@ -47881,7 +47881,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6622" name="pattern_01.36">
+                <node id="ID6622" name="pattern_01">
                     <translate sid="translate">-109.384 2.59064 87.3258</translate>
                     <rotate sid="rotateY">0 1 0 300.873</rotate>
                     <rotate sid="rotateX">1 0 0 -39.0656</rotate>
@@ -47897,7 +47897,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6631" name="pattern_01.35">
+                <node id="ID6631" name="pattern_01">
                     <translate sid="translate">-121.485 -4.48407 71.4207</translate>
                     <rotate sid="rotateY">0 1 0 297.913</rotate>
                     <rotate sid="rotateX">1 0 0 -25.3906</rotate>
@@ -47913,7 +47913,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6640" name="pattern_01.34">
+                <node id="ID6640" name="pattern_01">
                     <translate sid="translate">-131.148 -12.4179 54.2991</translate>
                     <rotate sid="rotateY">0 1 0 295.566</rotate>
                     <rotate sid="rotateX">1 0 0 -11.6686</rotate>
@@ -47929,7 +47929,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6649" name="pattern_01.33">
+                <node id="ID6649" name="pattern_01">
                     <translate sid="translate">-138.208 -20.4899 36.0086</translate>
                     <rotate sid="rotateY">0 1 0 293.445</rotate>
                     <rotate sid="rotateX">1 0 0 2.07055</rotate>
@@ -47945,7 +47945,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6658" name="pattern_01.32">
+                <node id="ID6658" name="pattern_01">
                     <translate sid="translate">-142.675 -27.97 16.6751</translate>
                     <rotate sid="rotateY">0 1 0 291.287</rotate>
                     <rotate sid="rotateX">1 0 0 15.8069</rotate>
@@ -47961,7 +47961,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6667" name="pattern_01.31">
+                <node id="ID6667" name="pattern_01">
                     <translate sid="translate">-144.734 -34.1684 -3.50507</translate>
                     <rotate sid="rotateY">0 1 0 288.807</rotate>
                     <rotate sid="rotateX">1 0 0 29.5186</rotate>
@@ -47977,7 +47977,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6676" name="pattern_01.30">
+                <node id="ID6676" name="pattern_01">
                     <translate sid="translate">-144.73 -38.4808 -24.2789</translate>
                     <rotate sid="rotateY">0 1 0 285.535</rotate>
                     <rotate sid="rotateX">1 0 0 43.1696</rotate>
@@ -47993,7 +47993,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6685" name="pattern_01.29">
+                <node id="ID6685" name="pattern_01">
                     <translate sid="translate">-143.149 -40.4304 -45.3532</translate>
                     <rotate sid="rotateY">0 1 0 280.349</rotate>
                     <rotate sid="rotateX">1 0 0 56.6728</rotate>
@@ -48009,7 +48009,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6694" name="pattern_01.28">
+                <node id="ID6694" name="pattern_01">
                     <translate sid="translate">-140.582 -39.6987 -66.4147</translate>
                     <rotate sid="rotateY">0 1 0 269.386</rotate>
                     <rotate sid="rotateX">1 0 0 69.718</rotate>
@@ -48025,7 +48025,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6703" name="pattern_01.27">
+                <node id="ID6703" name="pattern_01">
                     <translate sid="translate">-137.687 -36.1479 -87.1511</translate>
                     <rotate sid="rotateY">0 1 0 231.354</rotate>
                     <rotate sid="rotateX">1 0 0 80.2353</rotate>
@@ -48041,7 +48041,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6712" name="pattern_01.26">
+                <node id="ID6712" name="pattern_01">
                     <translate sid="translate">-135.143 -29.8295 -107.272</translate>
                     <rotate sid="rotateY">0 1 0 156.106</rotate>
                     <rotate sid="rotateX">1 0 0 77.2413</rotate>
@@ -48057,7 +48057,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6721" name="pattern_01.25">
+                <node id="ID6721" name="pattern_01">
                     <translate sid="translate">-133.605 -20.9816 -126.528</translate>
                     <rotate sid="rotateY">0 1 0 133.062</rotate>
                     <rotate sid="rotateX">1 0 0 65.2283</rotate>
@@ -48073,7 +48073,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6730" name="pattern_01.24">
+                <node id="ID6730" name="pattern_01">
                     <translate sid="translate">-133.663 -10.0117 -144.728</translate>
                     <rotate sid="rotateY">0 1 0 124.999</rotate>
                     <rotate sid="rotateX">1 0 0 51.9509</rotate>
@@ -48089,7 +48089,7 @@
                         </bind_material>
                     </instance_geometry>
                 </node>
-                <node id="ID6739" name="pattern_01.23">
+                <node id="ID6739" name="pattern_01">
                     <translate sid="translate">-135.796 2.52948 -161.752</translate>
                     <rotate sid="rotateY">0 1 0 120.7</rotate>
                     <rotate sid="rotateX">1 0 0 38.3788</rotate>
@@ -49418,7 +49418,7 @@
                     </bind_material>
                 </instance_geometry>
             </node>
-            <node id="ID7486" name="no_alpha.2">
+            <node id="ID7486" name="no_alpha">
                 <translate sid="translate">2.63904 -67.4944 -76.0636</translate>
                 <rotate sid="rotateY">0 1 0 0</rotate>
                 <rotate sid="rotateX">1 0 0 -28.9068</rotate>
