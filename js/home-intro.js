@@ -22,7 +22,7 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'ultimo/domenica5.dae';
+    var modelPath = 'ultimo/finale-nero.dae';
 
 
     function init() {
@@ -232,7 +232,7 @@ $( document ).ready(function() {
         //console.log(scene)
 
         var VIDEO_INIT = 0,
-            VIDEO_END = 100,
+            VIDEO_END = 140,
             auxTime;
 
         auxTime = currentTime + e;
