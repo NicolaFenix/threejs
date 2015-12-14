@@ -22,7 +22,7 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'ultimo/finale-bianco2.dae';
+    var modelPath = 'ultimo/modulo2.dae';
 
 
     function init() {
