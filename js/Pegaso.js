@@ -22,7 +22,7 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'ultimo/canazzo.dae';
+    var modelPath = 'Pegaso/pegaso_032.dae';
 
 
     function init() {
@@ -103,7 +103,7 @@ $( document ).ready(function() {
 
         var light = new THREE.AmbientLight( 0xffffff ); // soft white light
         scene.add( light );
-   scene.fog = new THREE.FogExp2( 0xf4eddb, 0.0002 );
+   scene.fog = new THREE.FogExp2( 0xf4eddb, 0.0001 );
 
     //        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
     //        var pianoMateriale = new THREE.MeshLambertMaterial({
@@ -277,7 +277,7 @@ $( document ).ready(function() {
             camera.aspect = window.innerWidth / window.innerHeight;
             //camera.setLens ( 36, 35 )
             camera.near = 10;
-            camera.far = 10000;
+            camera.far = 100000;
             camera.updateProjectionMatrix();
 
             for (var i = 0; i < kfAnimationsLength; ++i) {
@@ -465,7 +465,8 @@ $( document ).ready(function() {
                     //console.log('processArray' + array)
 
                     var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','mare','triangolo1',
-                    'triangolo2','triangolo3','triangolo4','freccia','bastone', 'canazzo'];
+                    'triangolo2','triangolo3','triangolo4','freccia','bastone', 'canazzo',
+                    'torre01', 'torre02', 'torre03', 'torre04', 'torre05', 'torre06', 'tri' ];
 
                     var transparent = ['mare'];
 
@@ -507,7 +508,7 @@ $( document ).ready(function() {
 
                     console.log('loadAlpha' + name)
 
-                    var file = 'ultimo/' + name + '_alpha.jpg',
+                    var file = 'Pegaso/' + name + '_alpha.jpg',
                         alpha = new THREE.Texture(),
                         material = object.children[0].material;
 
