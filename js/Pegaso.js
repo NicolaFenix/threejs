@@ -22,7 +22,7 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'salini/montagna2.dae';
+    var modelPath = 'salini/montagna-ruota.dae';
 
 
     function init() {
@@ -103,7 +103,7 @@ $( document ).ready(function() {
 
         var light = new THREE.AmbientLight( 0xdedce7 ); // soft white light
         scene.add( light );
-   scene.fog = new THREE.FogExp2( 0xdedce7, 0.0002 );
+   scene.fog = new THREE.FogExp2( 0xdedce7, 0.00017 );
 
     //        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
     //        var pianoMateriale = new THREE.MeshLambertMaterial({
