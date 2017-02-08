@@ -23,8 +23,7 @@ $( document ).ready(function() {
     initialized = false;
 
     var modelPath = 'ultimo/modulo2.dae';
-
-
+    
     function init() {
 
         console.log('BEGIN init()')
