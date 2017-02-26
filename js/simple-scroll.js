@@ -22,7 +22,8 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'salini/montagna2.dae';
+    var modelPath = 'salini/montagna3.dae';
+
 
     function init() {
 
@@ -100,9 +101,9 @@ $( document ).ready(function() {
     //        pointLight = new THREE.PointLight( 0xffffff, 1);
     //        scene.add( pointLight );
 
-        var light = new THREE.AmbientLight( 0xffffff ); // soft white light
+        var light = new THREE.AmbientLight( 0xdedce7 ); // soft white light
         scene.add( light );
-   scene.fog = new THREE.FogExp2( 0xebebeb, 0.0002 );
+   scene.fog = new THREE.FogExp2( 0xdedce7, 0.00018 );
 
     //        var pianoGeometria = new THREE.PlaneGeometry(2000, 2000, 2000);
     //        var pianoMateriale = new THREE.MeshLambertMaterial({
@@ -124,7 +125,7 @@ $( document ).ready(function() {
 
         renderer = new THREE.WebGLRenderer({antialias: true, alpha: true, logarithmicDepthBuffer: true});
         renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setClearColor( 0xebebeb, 1);
+        renderer.setClearColor( 0xdedce7, 1);
         //renderer.sortObjects = false;
         renderer.setSize(window.innerWidth, window.innerHeight);
         container.appendChild(renderer.domElement);
@@ -276,7 +277,7 @@ $( document ).ready(function() {
             camera.aspect = window.innerWidth / window.innerHeight;
             //camera.setLens ( 36, 35 )
             camera.near = 10;
-            camera.far = 10000;
+            camera.far = 100000;
             camera.updateProjectionMatrix();
 
             for (var i = 0; i < kfAnimationsLength; ++i) {
@@ -464,8 +465,9 @@ $( document ).ready(function() {
                     //console.log('processArray' + array)
 
                     var forbiddenNames = ['Light', 'Plane', 'Camera', 'Nullo', 'group1_pPlane8','mare','triangolo1',
-                    'triangolo2','triangolo3','triangolo4','freccia','bastone',' '];
-
+                    'triangolo2','triangolo3','triangolo4','freccia','bastone', 'canazzo',
+                    'torre01', 'torre02', 'torre03', 'torre04', 'torre05', 'torre06', 'tri', 'terreno', 'montagna', 'ponte'
+                     , 'cestino', 'palo', 'palo_macchina'];
 
                     var transparent = ['mare'];
 
@@ -507,7 +509,7 @@ $( document ).ready(function() {
 
                     console.log('loadAlpha' + name)
 
-                    var file = 'ultimo/' + name + '_alpha.jpg',
+                    var file = 'Pegaso/' + name + '_alpha.jpg',
                         alpha = new THREE.Texture(),
                         material = object.children[0].material;
 

@@ -22,7 +22,7 @@ $( document ).ready(function() {
     var chiesaAlpha;
     initialized = false;
 
-    var modelPath = 'salini/montagna-ruota.dae';
+    var modelPath = 'salini/montagna2.dae';
 
 
     function init() {
